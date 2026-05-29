@@ -1,0 +1,1098 @@
+/* [본문] Pretendard */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+/* [감성 도입문] KoPubWorld Batang */
+@font-face {
+  font-family: 'KoPubWorldBatang';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopubworld@main/KoPubWorldBatangLight.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/webfontworld/kopubworld@main/KoPubWorldBatangLight.woff') format('woff');
+}
+@font-face {
+  font-family: 'KoPubWorldBatang';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopubworld@main/KoPubWorldBatangMedium.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/webfontworld/kopubworld@main/KoPubWorldBatangMedium.woff') format('woff');
+}
+
+/* [브랜드 포인트] 조선굴림체 */
+@font-face {
+  font-family: 'ChosunGulim';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/chosun@main/ChosunGulim.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/webfontworld/chosun@main/ChosunGulim.woff') format('woff');
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ────────────────────────────────────────────────
+   COLOR SYSTEM
+   아이보리/크림 60% · 딥그린 25% · 머스터드 15%
+   타겟: 4050 갱년기 여성 — 신뢰·따뜻함·고급스러움
+──────────────────────────────────────────────── */
+:root {
+  /* 60% — 아이보리/크림 배경 (눈의 편안함, 기본 바탕) */
+  --cream:       #FAF8F3;   /* 메인 배경 */
+  --cream-alt:   #F2EFE7;   /* 섹션 교차 배경 */
+  --card-bg:     #F7F4EE;   /* 카드 배경 */
+  --card-img:    #EAE6DC;   /* 제품 이미지 영역 */
+
+  /* 25% — 딥 포레스트 그린 (신뢰·안정·권위) */
+  --forest:      #0B493A;   /* 메인 다크 */
+  --forest-mid:  #1A6048;   /* 서브 그린 */
+  --forest-lite: #4A8A68;   /* 뮤트 그린 */
+
+  /* 15% — 머스터드 베이지 (따뜻함·온기·CTA) */
+  --mustard:     #F2B659;   /* 메인 포인트 */
+  --mustard-dk:  #D4963C;   /* 호버/강조 */
+  --mustard-lt:  #FAE8C0;   /* 연한 포인트 */
+
+  /* 중성 텍스트 (따뜻한 계열) */
+  --ink:         #1C1A18;   /* 주 텍스트 — 따뜻한 흑 */
+  --ink-mid:     #5C5850;   /* 보조 텍스트 */
+  --ink-lite:    #9C9488;   /* 캡션/플레이스홀더 */
+
+  /* 구조 */
+  --border:      #DDD8CF;
+  --white:       #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  line-height: 1.8;
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ── HEADER — 딥그린 (신뢰·권위) ─────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--forest);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 0 48px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--mustard-lt);
+  border: 2px solid var(--forest);
+  box-shadow: 0 0 0 4px var(--mustard-lt), 0 0 0 6.5px var(--forest);
+  font-family: 'Pretendard', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--forest);
+  text-align: center;
+  line-height: 1.45;
+  flex-shrink: 0;
+}
+
+.header-nav {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.header-nav a {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(250,248,243,0.72);
+  transition: color 0.2s;
+}
+.header-nav a:hover { color: var(--mustard); }
+
+.header-actions {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.header-actions a {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(250,248,243,0.72);
+  transition: color 0.2s;
+}
+.header-actions a:hover { color: var(--mustard); }
+.cart-icon { display: flex; align-items: center; gap: 6px; }
+
+/* ── HERO — 아이보리 좌측 + 딥그린 우측 ─────────── */
+.hero {
+  position: relative;
+  height: calc(100vh - 64px);
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(130deg, #FAF8F3 0%, #F5F0E6 55%, #EDE7DA 100%);
+}
+
+.hero-image-block {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 52%;
+  background: linear-gradient(155deg, #0E5B49 0%, #0B493A 60%, #083428 100%);
+  overflow: hidden;
+}
+.hero-image-block img {
+  width: 100%; height: 100%;
+  object-fit: cover; opacity: 0.82;
+}
+
+.hero-placeholder-product {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(155deg, #0E5B49 0%, #083428 100%);
+}
+
+.hero-bottle {
+  width: 160px; height: 280px;
+  background: linear-gradient(170deg, #FAE8C0 0%, #F2B659 100%);
+  border-radius: 12px 12px 20px 20px;
+  box-shadow: 6px 12px 40px rgba(0,0,0,0.22);
+  position: relative;
+}
+.hero-bottle::before {
+  content: '';
+  position: absolute;
+  top: -24px; left: 50%;
+  transform: translateX(-50%);
+  width: 28px; height: 30px;
+  background: #C4883A;
+  border-radius: 4px 4px 0 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 72px;
+  max-width: 700px;
+}
+
+.hero-eyebrow {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mustard-dk);
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: 'Pretendard', sans-serif;
+  font-size: clamp(40px, 5.2vw, 70px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--forest);
+  margin-bottom: 24px;
+}
+.hero-title em {
+  font-family: 'KoPubWorldBatang', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--forest-mid);
+}
+
+.hero-desc {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--ink-mid);
+  margin-bottom: 44px;
+  max-width: 440px;
+}
+
+/* ── BUTTONS ──────────────────────────────────────── */
+/* 기본 버튼: 딥그린 배경 (신뢰·권위) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  border: 1px solid var(--forest);
+  background: var(--forest);
+  color: var(--cream);
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.btn:hover {
+  background: var(--mustard);
+  color: var(--ink);
+  border-color: var(--mustard);
+}
+.btn-arrow::after { content: '→'; font-size: 13px; }
+
+.btn-dark {
+  background: var(--forest);
+  color: var(--cream);
+  border-color: var(--forest);
+}
+.btn-dark:hover {
+  background: var(--mustard);
+  color: var(--ink);
+  border-color: var(--mustard);
+}
+
+/* ── MARQUEE — 머스터드 띠 (따뜻한 브랜드 포인트) ── */
+.marquee-wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--mustard-dk);
+  border-bottom: 1px solid var(--mustard-dk);
+  padding: 13px 0;
+  background-color: var(--mustard);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 56px;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+.marquee-track span {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--forest);
+  flex-shrink: 0;
+}
+.marquee-dot { color: var(--forest-mid) !important; }
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── SECTION COMMONS ──────────────────────────────── */
+.section { padding: 100px 48px; }
+
+.section-label {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mustard-dk);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: 'Pretendard', sans-serif;
+  font-size: clamp(26px, 3.4vw, 44px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--forest);
+}
+.section-title em {
+  font-family: 'KoPubWorldBatang', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--forest-mid);
+}
+
+/* ── FEATURED PRODUCTS — 아이보리 배경 ───────────── */
+.featured-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 52px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.products-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.product-card {
+  background: var(--card-bg);
+  padding: 36px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s;
+  position: relative;
+}
+.product-card:hover {
+  box-shadow: 0 8px 36px rgba(11,73,58,0.09);
+  z-index: 1;
+}
+
+.product-img-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1.1;
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-img);
+}
+.product-img-wrap img {
+  width: 65%; height: 65%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+.product-card:hover .product-img-wrap img { transform: scale(1.04); }
+
+.product-placeholder {
+  width: 60%; height: 75%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* 제품 플레이스홀더: 딥그린 + 머스터드 교차 */
+.prod-bottle-tall {
+  width: 56px; height: 120px;
+  background: linear-gradient(170deg, #1A6048 0%, #0B493A 100%);
+  border-radius: 8px 8px 10px 10px;
+  box-shadow: 3px 6px 24px rgba(11,73,58,0.2);
+  position: relative;
+}
+.prod-bottle-tall::before {
+  content: '';
+  position: absolute; top: -14px; left: 50%;
+  transform: translateX(-50%);
+  width: 16px; height: 18px;
+  background: var(--mustard);
+  border-radius: 3px 3px 0 0;
+}
+
+.prod-jar {
+  width: 90px; height: 70px;
+  background: linear-gradient(160deg, #FAE8C0 0%, #F2B659 100%);
+  border-radius: 6px;
+  box-shadow: 3px 6px 24px rgba(0,0,0,0.10);
+  position: relative;
+}
+.prod-jar::before {
+  content: '';
+  position: absolute; top: -12px; left: 4px; right: 4px;
+  height: 14px;
+  background: var(--mustard-dk);
+  border-radius: 4px 4px 0 0;
+}
+
+.prod-serum {
+  width: 44px; height: 130px;
+  background: linear-gradient(170deg, #1A6048 0%, #0B493A 100%);
+  border-radius: 50% 50% 8px 8px / 20px 20px 8px 8px;
+  box-shadow: 3px 6px 24px rgba(11,73,58,0.2);
+  position: relative;
+}
+.prod-serum::before {
+  content: '';
+  position: absolute; top: -18px; left: 50%;
+  transform: translateX(-50%);
+  width: 10px; height: 22px;
+  background: var(--mustard);
+  border-radius: 4px 4px 0 0;
+}
+
+.prod-tube {
+  width: 38px; height: 110px;
+  background: linear-gradient(170deg, #FAE8C0 0%, #F2B659 100%);
+  border-radius: 4px 4px 8px 8px;
+  box-shadow: 3px 6px 24px rgba(0,0,0,0.10);
+  position: relative;
+}
+.prod-tube::before {
+  content: '';
+  position: absolute; bottom: -8px; left: 6px; right: 6px;
+  height: 12px;
+  background: var(--mustard-dk);
+  border-radius: 0 0 4px 4px;
+}
+
+.prod-toner {
+  width: 52px; height: 140px;
+  background: linear-gradient(170deg, #1A6048 0%, #0B493A 100%);
+  border-radius: 26px 26px 10px 10px;
+  box-shadow: 3px 6px 24px rgba(11,73,58,0.2);
+  position: relative;
+}
+.prod-toner::before {
+  content: '';
+  position: absolute; top: -10px; left: 50%;
+  transform: translateX(-50%);
+  width: 14px; height: 14px;
+  background: var(--mustard);
+  border-radius: 50%;
+}
+
+.wishlist-btn {
+  position: absolute; top: 16px; right: 16px;
+  background: none; border: none; cursor: pointer;
+  color: var(--ink-lite); transition: color 0.2s;
+  line-height: 1; padding: 4px; font-size: 16px;
+}
+.wishlist-btn:hover { color: var(--mustard-dk); }
+
+.product-name {
+  font-size: 17px; font-weight: 600;
+  letter-spacing: 0; text-transform: none;
+  color: var(--ink); margin-bottom: 12px; line-height: 1.5;
+}
+
+/* 설명란 3줄 고정 — 카드 높이 통일 */
+.product-card p:not(.product-name) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.product-price {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--forest); margin-bottom: 18px;
+}
+
+/* Add to Cart — 머스터드 포인트 (구매 유도) */
+.add-to-cart {
+  display: flex; align-items: center; justify-content: space-between;
+  background: none; border: none;
+  border-top: 1px solid var(--border);
+  padding-top: 20px; width: 100%;
+  margin-top: auto;
+  cursor: pointer;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 0.04em; text-transform: none;
+  color: var(--forest); transition: color 0.2s;
+}
+.add-to-cart:hover { color: var(--mustard-dk); }
+.add-to-cart span { font-size: 14px; }
+
+/* ── BRAND STORY — 딥그린 이미지 + 아이보리 콘텐츠 ─ */
+.brand-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0; min-height: 580px;
+}
+
+.brand-story-image {
+  background: linear-gradient(145deg, #0E5B49 0%, #083428 100%);
+  display: flex; align-items: center; justify-content: center;
+  min-height: 500px; overflow: hidden;
+}
+.brand-story-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.brand-story-content {
+  padding: 80px 72px;
+  display: flex; flex-direction: column; justify-content: center;
+  background: var(--cream-alt);
+}
+.brand-story-content .section-title { margin-bottom: 28px; }
+.brand-story-content p {
+  font-size: 17px; font-weight: 400;
+  line-height: 1.85; color: var(--ink-mid); margin-bottom: 16px;
+}
+.brand-story-content .btn { margin-top: 32px; align-self: flex-start; }
+
+/* ── PHILOSOPHY — 머스터드 숫자 포인트 ───────────── */
+.philosophy {
+  padding: 88px 48px;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  border-top: 1px solid var(--border);
+  background: var(--cream);
+}
+.philosophy-item { text-align: center; padding: 20px; }
+
+.philosophy-number {
+  font-family: 'KoPubWorldBatang', serif;
+  font-size: 52px; font-weight: 300;
+  color: var(--mustard);
+  line-height: 1; margin-bottom: 20px;
+}
+
+.philosophy-title {
+  font-size: 17px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--forest); margin-bottom: 16px;
+}
+.philosophy-text {
+  font-size: 17px; font-weight: 400;
+  line-height: 1.9; color: var(--ink-mid);
+}
+
+/* ── NEWSLETTER — 딥그린 배경 (신뢰·CTA) ────────── */
+.newsletter {
+  padding: 100px 48px; text-align: center;
+  background: var(--forest);
+  border-top: none;
+}
+.newsletter .section-label { color: var(--mustard); }
+.newsletter .section-title { color: var(--cream); margin-bottom: 16px; }
+.newsletter .section-title em { color: rgba(250,248,243,0.72); }
+.newsletter p {
+  font-size: 17px; font-weight: 400;
+  color: rgba(250,248,243,0.65); margin-bottom: 44px;
+}
+
+.newsletter-form {
+  display: flex; max-width: 420px; margin: 0 auto;
+  border-bottom: 1px solid rgba(250,248,243,0.3);
+}
+.newsletter-form input {
+  flex: 1; background: none; border: none; outline: none;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 17px; letter-spacing: 0.01em;
+  color: var(--cream); padding: 16px 0;
+}
+.newsletter-form input::placeholder { color: rgba(250,248,243,0.38); }
+.newsletter-form button {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--mustard); padding: 16px 0 16px 20px;
+  transition: color 0.2s;
+}
+.newsletter-form button:hover { color: var(--cream); }
+
+/* ── FOOTER — 딥그린 배경 (브랜드 신뢰) ─────────── */
+.site-footer {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 56px 48px 36px;
+  background-color: var(--forest);
+}
+.footer-top {
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  gap: 40px; align-items: start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 28px;
+}
+
+.footer-nav h4, .footer-right h4 {
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--mustard); margin-bottom: 20px;
+}
+.footer-nav ul, .footer-right ul {
+  list-style: none; display: flex; flex-direction: column; gap: 14px;
+}
+.footer-nav a, .footer-right a {
+  font-size: 16px; font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(250,248,243,0.55); transition: color 0.2s;
+}
+.footer-nav a:hover, .footer-right a:hover { color: var(--cream); }
+
+.footer-center { text-align: center; }
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--mustard-lt);
+  border: 2px solid var(--forest);
+  box-shadow: 0 0 0 4px var(--mustard-lt), 0 0 0 6.5px var(--mustard);
+  font-family: 'Pretendard', sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--forest);
+  text-align: center;
+  line-height: 1.45;
+  margin-bottom: 24px;
+}
+.footer-socials {
+  display: flex; gap: 16px; justify-content: center; list-style: none;
+}
+.footer-socials a {
+  font-size: 16px; font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(250,248,243,0.55); transition: color 0.2s;
+}
+.footer-socials a:hover { color: var(--mustard); }
+
+.footer-right { text-align: right; }
+.footer-right ul { align-items: flex-end; }
+
+.footer-newsletter-input {
+  display: flex;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  justify-content: flex-end;
+}
+.footer-newsletter-input input {
+  background: none; border: none; outline: none;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px; color: var(--cream);
+  padding: 10px 0; width: 180px; text-align: right;
+}
+.footer-newsletter-input input::placeholder { color: rgba(250,248,243,0.3); }
+.footer-newsletter-input button {
+  background: none; border: none; cursor: pointer;
+  font-size: 13px; color: rgba(250,248,243,0.55);
+  padding: 8px 0 8px 12px; transition: color 0.2s;
+}
+.footer-newsletter-input button:hover { color: var(--mustard); }
+
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom p {
+  font-size: 14px; font-weight: 400;
+  letter-spacing: 0.01em; color: rgba(250,248,243,0.4);
+}
+.footer-legal { display: flex; gap: 24px; list-style: none; }
+.footer-legal a {
+  font-size: 14px; font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(250,248,243,0.4); transition: color 0.2s;
+}
+.footer-legal a:hover { color: var(--cream); }
+
+/* ── CATALOG PAGE ─────────────────────────────────── */
+.catalog-header {
+  padding: 52px 48px 36px;
+  border-bottom: 1px solid var(--border);
+  background: var(--cream);
+}
+.catalog-title {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 44px; font-weight: 700;
+  letter-spacing: -0.02em; color: var(--forest); margin-bottom: 32px;
+}
+.catalog-filters { display: flex; align-items: center; justify-content: space-between; }
+
+.filter-tabs { display: flex; gap: 0; list-style: none; }
+.filter-tabs li a {
+  display: block;
+  font-size: 15px; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--ink-lite); padding: 10px 20px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.filter-tabs li a:hover,
+.filter-tabs li.active a {
+  color: var(--forest);
+  border-bottom-color: var(--mustard);
+}
+.filter-tabs li:first-child a { padding-left: 0; }
+
+.filter-by {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 15px; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--forest); cursor: pointer;
+  background: none; border: none;
+  font-family: 'Pretendard', sans-serif;
+}
+.filter-by span { font-size: 10px; }
+
+.catalog-grid-wrap { padding: 2px 48px 0; }
+.catalog-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+}
+
+/* ── PAGINATION ───────────────────────────────────── */
+.pagination {
+  display: flex; justify-content: center;
+  align-items: center; gap: 4px;
+  padding: 60px 0 80px;
+}
+.pagination a {
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 400;
+  letter-spacing: 0.06em; color: var(--ink-mid);
+  border: 1px solid transparent; transition: all 0.2s;
+}
+.pagination a:hover {
+  color: var(--forest); border-color: var(--border);
+}
+.pagination a.active {
+  background: var(--mustard);
+  color: var(--ink); border-color: var(--mustard);
+  font-weight: 500;
+}
+
+/* ── PRODUCT DETAIL PAGE ───────────────────────────────── */
+.pd-breadcrumb {
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(11,73,58,0.1);
+  background: var(--cream);
+}
+.pd-breadcrumb a,
+.pd-breadcrumb span {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--forest-lite);
+  transition: color 0.2s;
+}
+.pd-breadcrumb a:hover { color: var(--forest); }
+.pd-breadcrumb-sep { color: var(--border); }
+.pd-breadcrumb span:last-child { color: var(--forest); }
+
+.pd-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 600px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pd-images {
+  background: var(--card-bg);
+  padding: 52px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 1px solid rgba(212,150,60,0.2);
+}
+
+.pd-main-image {
+  position: relative;
+  flex: 1;
+  min-height: 380px;
+  background: linear-gradient(140deg, #F5EDD8 0%, var(--mustard-lt) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pd-product-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 48px;
+}
+
+.pd-visual-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-visual-glow {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(232,168,74,0.22) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.pd-wishlist {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+
+.pd-thumbnails {
+  display: flex;
+  gap: 10px;
+}
+
+.pd-thumb {
+  width: 72px;
+  height: 72px;
+  background: var(--cream);
+  border: 1px solid rgba(212,150,60,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.pd-thumb:hover { border-color: var(--mustard-dk); }
+.pd-thumb-active { border-color: var(--forest); }
+
+.pd-info {
+  padding: 52px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--cream);
+}
+
+.pd-regimen-step {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mustard-dk);
+  margin-bottom: 16px;
+}
+
+.pd-product-name {
+  font-family: 'Pretendard', sans-serif;
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--forest);
+  margin-bottom: 22px;
+}
+.pd-product-name em {
+  font-family: 'KoPubWorldBatang', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--forest-mid);
+}
+
+.pd-desc {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--forest-mid);
+  margin-bottom: 32px;
+  max-width: 440px;
+}
+
+.pd-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 36px;
+  border-top: 1px solid rgba(212,150,60,0.25);
+}
+
+.pd-meta-row {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(212,150,60,0.25);
+}
+
+.pd-meta-label {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--forest);
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.pd-meta-value {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--forest-mid);
+  line-height: 1.7;
+}
+
+.pd-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.pd-price {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--forest);
+}
+
+.pd-price-original {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--forest-lite);
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.pd-badge {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--forest);
+  padding: 4px 10px;
+  border-radius: 2px;
+  align-self: center;
+}
+
+.pd-actions {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 20px;
+  height: 48px;
+}
+
+.pd-qty {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-right: none;
+}
+
+.pd-qty-btn {
+  width: 44px;
+  height: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--forest);
+  font-family: 'Pretendard', sans-serif;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pd-qty-btn:hover { background: var(--mustard-lt); }
+
+.pd-qty-val {
+  width: 44px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--forest);
+  border-left: 1px solid rgba(212,150,60,0.25);
+  border-right: 1px solid rgba(212,150,60,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-add-btn {
+  flex: 1;
+  background: var(--forest);
+  color: var(--mustard);
+  border: 1px solid var(--forest);
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+  padding: 0 32px;
+}
+.pd-add-btn:hover {
+  background: var(--mustard);
+  color: var(--forest);
+  border-color: var(--mustard);
+}
+
+.pd-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pd-links a {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--forest-lite);
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.pd-links a:hover { color: var(--forest); border-bottom-color: var(--forest); }
+.pd-links span { color: var(--border); font-size: 12px; }
+
+.pd-related {
+  padding: 80px 48px;
+  border-top: 1px solid var(--border);
+  background: var(--cream);
+}
+
+.pd-related-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.pd-related-grid {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 900px) {
+  .site-header { padding: 0 24px; }
+  .header-nav { gap: 20px; }
+  .hero-content { padding: 0 40px; }
+  .hero-image-block { width: 45%; }
+  .section { padding: 72px 24px; }
+  .products-grid, .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .brand-story { grid-template-columns: 1fr; }
+  .brand-story-image { min-height: 300px; }
+  .brand-story-content { padding: 60px 40px; }
+  .philosophy { grid-template-columns: 1fr; gap: 32px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-center { order: -1; grid-column: 1 / -1; }
+  .catalog-header { padding: 40px 24px 28px; }
+  .catalog-grid-wrap { padding: 2px 24px 0; }
+}
+
+@media (max-width: 600px) {
+  .header-nav { display: none; }
+  .products-grid, .catalog-grid { grid-template-columns: 1fr; }
+  .hero { height: auto; padding: 80px 0; }
+  .hero-image-block { display: none; }
+  .hero-content { padding: 0 24px; }
+}
