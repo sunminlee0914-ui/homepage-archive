@@ -38,28 +38,34 @@
 
     <!-- Left: Images -->
     <div class="pd-images">
-      <div class="pd-main-image">
-        <div class="pd-product-visual">
-          <div class="pd-visual-group">
-            <div class="prod-jar" style="width:110px;height:88px;"></div>
-            <div class="pd-visual-glow"></div>
-          </div>
-        </div>
+      <div class="pd-main-image" style="overflow:hidden;">
+        <img id="pd-main-img" src="images/recipe-guide.png" alt="방탄커피 레시피 가이드"
+             style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;">
         <button class="wishlist-btn pd-wishlist" aria-label="Wishlist">♡</button>
       </div>
 
       <div class="pd-thumbnails">
-        <div class="pd-thumb pd-thumb-active">
-          <div class="prod-jar" style="width:40px;height:32px;"></div>
+        <div class="pd-thumb pd-thumb-active" onclick="switchImg(this,'images/recipe-guide.png')">
+          <img src="images/recipe-guide.png" alt="레시피 가이드"
+               style="width:100%;height:100%;object-fit:cover;border-radius:6px;">
         </div>
-        <div class="pd-thumb">
-          <div class="prod-serum" style="width:16px;height:48px;"></div>
+        <div class="pd-thumb" onclick="switchImg(this,'images/ingredients-final.jpg')">
+          <img src="images/ingredients-final.jpg" alt="재료 사진"
+               style="width:100%;height:100%;object-fit:cover;border-radius:6px;">
         </div>
-        <div class="pd-thumb">
-          <div class="prod-bottle-tall" style="width:20px;height:56px;"></div>
+        <div class="pd-thumb" onclick="switchImg(this,'images/coffee-final.jpg')">
+          <img src="images/coffee-final.jpg" alt="방탄커피 완성"
+               style="width:100%;height:100%;object-fit:cover;border-radius:6px;">
         </div>
       </div>
     </div>
+    <script>
+      function switchImg(thumb, src) {
+        document.getElementById('pd-main-img').src = src;
+        document.querySelectorAll('.pd-thumb').forEach(t => t.classList.remove('pd-thumb-active'));
+        thumb.classList.add('pd-thumb-active');
+      }
+    </script>
 
     <!-- Right: Info -->
     <div class="pd-info">
