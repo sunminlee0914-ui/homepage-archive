@@ -169,17 +169,15 @@ img { display: block; max-width: 100%; }
   position: absolute;
   right: 0; top: 0; bottom: 0;
   width: 52%;
-  background: transparent;
+  background: #2D7A5A;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .hero-image-block img {
-  height: 92%;
-  width: auto;
-  object-fit: contain;
-  drop-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  mix-blend-mode: multiply;
 }
 
 .hero-placeholder-product {
