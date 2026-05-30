@@ -865,7 +865,7 @@ img { display: block; max-width: 100%; }
   padding: 52px 56px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background: var(--cream);
 }
 
