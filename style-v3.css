@@ -313,7 +313,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ── SECTION COMMONS ──────────────────────────────── */
-.section { padding: 100px 48px; }
+.section { padding: 64px 48px; }
 
 .section-label {
   font-size: 14px;
@@ -1079,7 +1079,7 @@ img { display: block; max-width: 100%; }
   .header-nav { gap: 20px; }
   .hero-content { padding: 0 40px; }
   .hero-image-block { width: 45%; }
-  .section { padding: 72px 24px; }
+  .section { padding: 48px 24px; }
   .products-grid, .catalog-grid { grid-template-columns: repeat(2, 1fr); }
   .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
   .brand-story { grid-template-columns: 1fr; }
