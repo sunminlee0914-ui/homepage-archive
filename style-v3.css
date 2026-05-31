@@ -886,7 +886,7 @@ img { display: block; max-width: 100%; }
   font-size: clamp(28px, 3.2vw, 42px);
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.05em;
   color: var(--forest);
   margin-bottom: 22px;
 }
