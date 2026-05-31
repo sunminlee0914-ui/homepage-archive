@@ -39,7 +39,7 @@
     <!-- Left: Images -->
     <div class="pd-images">
       <div class="pd-main-image">
-        <img src="images/digital_measure.png" alt="홈플래닛 디지털 주방저울" style="width:100%;height:100%;object-fit:cover;">
+        <img id="main-product-img" src="images/digital_measure.png" alt="홈플래닛 디지털 주방저울" style="width:100%;height:100%;object-fit:cover;">
         <button class="wishlist-btn pd-wishlist" aria-label="Wishlist">♡</button>
       </div>
 
@@ -204,6 +204,23 @@
       </ul>
     </div>
   </footer>
+
+  <script>
+    document.querySelectorAll('.pd-thumb').forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        document.querySelectorAll('.pd-thumb').forEach(function(t) {
+          t.classList.remove('pd-thumb-active');
+        });
+        this.classList.add('pd-thumb-active');
+        var thumbImg = this.querySelector('img');
+        if (thumbImg) {
+          var mainImg = document.getElementById('main-product-img');
+          mainImg.src = thumbImg.src;
+          mainImg.alt = thumbImg.alt;
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
