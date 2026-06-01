@@ -1108,7 +1108,7 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 600px) {
   .header-nav { display: none; }
-  .products-grid, .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid, .catalog-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .hero { height: auto; padding: 64px 0; justify-content: center; }
   .hero-image-block { display: none; }
   .hero-content { padding: 0 24px; max-width: 100%; text-align: center; }
