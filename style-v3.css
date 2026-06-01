@@ -1088,7 +1088,7 @@ img { display: block; max-width: 100%; }
   .brand-story-image { min-height: 300px; }
   .brand-story-content { padding: 60px 40px; }
   .philosophy { grid-template-columns: 1fr; gap: 32px; }
-  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
   .footer-center { order: -1; grid-column: 1 / -1; }
   .catalog-header { padding: 40px 24px 28px; }
   .catalog-grid-wrap { padding: 2px 24px 0; }
