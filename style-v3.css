@@ -1090,6 +1090,14 @@ img { display: block; max-width: 100%; }
   .footer-center { order: -1; grid-column: 1 / -1; }
   .catalog-header { padding: 40px 24px 28px; }
   .catalog-grid-wrap { padding: 2px 24px 0; }
+
+  /* pd-section 태블릿 */
+  .pd-section { grid-template-columns: 1fr; min-height: unset; }
+  .pd-images { padding: 32px 24px; border-right: none; border-bottom: 1px solid rgba(212,150,60,0.2); }
+  .pd-main-image { min-height: 300px; }
+  .pd-info { padding: 32px 24px; }
+  .pd-related { padding: 48px 24px; }
+  .pd-related-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
 @media (max-width: 600px) {
@@ -1098,4 +1106,18 @@ img { display: block; max-width: 100%; }
   .hero { height: auto; padding: 80px 0; }
   .hero-image-block { display: none; }
   .hero-content { padding: 0 24px; }
+
+  /* pd-section 모바일 */
+  .pd-images { padding: 20px 16px; }
+  .pd-main-image { min-height: 240px; }
+  .pd-product-visual { padding: 24px; }
+  .pd-info { padding: 20px 16px; }
+  .pd-meta-row { flex-direction: column; gap: 4px; }
+  .pd-meta-label { min-width: unset; }
+  .pd-actions { height: 52px; }
+  .pd-add-btn { padding: 0 16px; font-size: 14px; }
+  .pd-links { flex-wrap: wrap; gap: 8px; }
+  .pd-related { padding: 40px 16px; }
+  .pd-related-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .pd-related-header { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 28px; }
 }
