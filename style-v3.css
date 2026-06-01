@@ -1092,6 +1092,11 @@ img { display: block; max-width: 100%; }
   .footer-center { order: -1; grid-column: 1 / -1; }
   .catalog-header { padding: 40px 24px 28px; }
   .catalog-grid-wrap { padding: 2px 24px 0; }
+  .catalog-title { font-size: 32px; margin-bottom: 20px; }
+  .catalog-filters { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .filter-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px; width: 100%; }
+  .filter-tabs li a { white-space: nowrap; padding: 8px 16px; font-size: 14px; }
+  .filter-by { font-size: 13px; }
 
   /* product-card 태블릿 */
   .product-card { padding: 24px 20px 20px; }
