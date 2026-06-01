@@ -1114,13 +1114,15 @@ img { display: block; max-width: 100%; }
 @media (max-width: 600px) {
   .header-nav { display: none; }
   .products-grid, .catalog-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .hero { height: auto; padding: 64px 0; justify-content: center; }
+  .hero { height: auto; padding: 18px 24px; justify-content: center; min-height: unset; }
   .hero-image-block { display: none; }
-  .hero-content { padding: 0 24px; max-width: 100%; text-align: center; }
-  .hero-eyebrow { font-size: 12px; }
-  .hero-title { font-size: clamp(30px, 8vw, 44px); margin-bottom: 16px; }
-  .hero-desc { font-size: 15px; line-height: 1.8; max-width: 100%; margin-bottom: 32px; }
-  .hero .btn { width: 100%; justify-content: center; padding: 16px 24px; }
+  .hero-content { padding: 0; max-width: 100%; text-align: center; }
+  .hero-eyebrow { display: none; }
+  .hero-title { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0; white-space: nowrap; }
+  .hero-title br { display: none; }
+  .hero-title em { font-style: normal; }
+  .hero-desc { display: none; }
+  .hero .btn { display: none; }
 
   /* product-card 모바일 */
   .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
