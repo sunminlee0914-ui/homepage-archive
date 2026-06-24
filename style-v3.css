@@ -486,6 +486,12 @@ img { display: block; max-width: 100%; }
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+.product-card p.pick-p {
+  overflow: visible;
+  display: block;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+}
 
 .product-price {
   font-family: 'Pretendard', sans-serif;
