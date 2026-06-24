@@ -844,11 +844,15 @@ img { display: block; max-width: 100%; }
 .pd-thumbnails {
   display: flex;
   gap: 10px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
 }
 
 .pd-thumb {
   width: 72px;
   height: 72px;
+  min-width: 72px;
+  flex-shrink: 0;
   background: var(--cream);
   border: 1px solid rgba(212,150,60,0.2);
   display: flex;
