@@ -39,9 +39,31 @@
     <!-- Left: Images -->
     <div class="pd-images">
       <div class="pd-main-image" id="main-product-wrap">
-        <img id="main-product-img" src="images/protine_recipe-guide.png" alt="단백질 크림샷 레시피" style="width:100%;height:100%;object-fit:cover;">
+        <img id="main-product-img" src="images/protine_recipe-guide.png" alt="단백질 크림샷 레시피" style="width:100%;height:100%;object-fit:cover;cursor:default;">
+      </div>
+
+      <div class="pd-thumbnails">
+        <div class="pd-thumb pd-thumb-active" onclick="switchImg(this, 'images/protine_recipe-guide.png')">
+          <img src="images/protine_recipe-guide.png" alt="레시피 가이드" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="pd-thumb" onclick="switchImg(this, 'images/sunflower_lecithin_coffee.png')">
+          <img src="images/sunflower_lecithin_coffee.png" alt="레시틴 방탄커피" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="pd-thumb" onclick="switchImg(this, 'images/olive-oil-padded.png')">
+          <img src="images/olive-oil-padded.png" alt="올리브 오일" style="width:100%;height:100%;object-fit:cover;">
+        </div>
       </div>
     </div>
+
+    <script>
+      function switchImg(thumb, src) {
+        document.getElementById('main-product-img').src = src;
+        document.querySelectorAll('.pd-thumb').forEach(function(t) {
+          t.classList.remove('pd-thumb-active');
+        });
+        thumb.classList.add('pd-thumb-active');
+      }
+    </script>
 
     <!-- Right: Info -->
     <div class="pd-info">
