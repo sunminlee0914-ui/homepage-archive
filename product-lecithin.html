@@ -44,17 +44,30 @@
       </div>
 
       <div class="pd-thumbnails">
-        <div class="pd-thumb pd-thumb-active">
+        <div class="pd-thumb pd-thumb-active" onclick="switchImg(this,'images/lecithin-guide.png')">
           <img src="images/lecithin-guide.png" alt="레시틴 방탄커피 레시피" style="width:100%;height:100%;object-fit:cover;">
         </div>
-        <div class="pd-thumb">
+        <div class="pd-thumb" onclick="switchImg(this,'images/lecithin_coffee.png')">
           <img src="images/lecithin_coffee.png" alt="레시틴 방탄커피" style="width:100%;height:100%;object-fit:cover;">
         </div>
-        <div class="pd-thumb">
+        <div class="pd-thumb" onclick="switchImg(this,'images/lecithin-guide_why.png')">
           <img src="images/lecithin-guide_why.png" alt="해바라기 레시틴 선택 기준" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="pd-thumb" onclick="switchImg(this,'images/sunflower_lecithin_coffee.png')">
+          <img src="images/sunflower_lecithin_coffee.png" alt="레시틴 방탄커피 재료" style="width:100%;height:100%;object-fit:cover;">
         </div>
       </div>
     </div>
+
+    <script>
+      function switchImg(thumb, src) {
+        document.getElementById('main-product-img').src = src;
+        document.querySelectorAll('.pd-thumb').forEach(function(t) {
+          t.classList.remove('pd-thumb-active');
+        });
+        thumb.classList.add('pd-thumb-active');
+      }
+    </script>
 
     <!-- Right: Info -->
     <div class="pd-info">
