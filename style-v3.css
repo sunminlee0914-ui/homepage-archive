@@ -479,11 +479,11 @@ img { display: block; max-width: 100%; }
   color: var(--ink); margin-bottom: 12px; line-height: 1.5;
 }
 
-/* 설명란 3줄 고정 — 카드 높이 통일 */
+/* 설명란 4줄 고정 — 카드 높이 통일 */
 .product-card p:not(.product-name) {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 .product-card p.pick-p {
