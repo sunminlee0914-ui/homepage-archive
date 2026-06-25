@@ -121,9 +121,8 @@ img { display: block; max-width: 100%; }
 .header-nav a {
   font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(250,248,243,0.72);
+  letter-spacing: 0.03em;
+  color: rgba(250,248,243,0.88);
   transition: color 0.2s;
 }
 .header-nav a:hover { color: var(--mustard); }
@@ -136,9 +135,8 @@ img { display: block; max-width: 100%; }
 .header-actions a {
   font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(250,248,243,0.72);
+  letter-spacing: 0.03em;
+  color: rgba(250,248,243,0.88);
   transition: color 0.2s;
 }
 .header-actions a:hover { color: var(--mustard); }
