@@ -571,16 +571,16 @@ img { display: block; max-width: 100%; }
 
 /* ── NEWSLETTER — 딥그린 배경 (신뢰·CTA) ────────── */
 .newsletter {
-  padding: 100px 48px; text-align: center;
+  padding: 56px 48px; text-align: center;
   background: var(--forest);
   border-top: none;
 }
 .newsletter .section-label { color: var(--mustard); }
-.newsletter .section-title { color: var(--cream); margin-bottom: 16px; }
+.newsletter .section-title { color: var(--cream); margin-bottom: 12px; }
 .newsletter .section-title em { color: rgba(250,248,243,0.72); }
 .newsletter p {
   font-size: 17px; font-weight: 400;
-  color: rgba(250,248,243,0.65); margin-bottom: 44px;
+  color: rgba(250,248,243,0.65); margin-bottom: 20px;
 }
 
 .newsletter-form {
