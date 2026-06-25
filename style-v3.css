@@ -485,11 +485,11 @@ img { display: block; max-width: 100%; }
   -webkit-box-orient: vertical;
 }
 .product-card p.pick-p {
-  overflow: visible;
-  display: block;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
   font-size: 16px !important;
-  -webkit-line-clamp: unset;
-  -webkit-box-orient: unset;
 }
 
 .product-price {
