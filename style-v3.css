@@ -489,6 +489,7 @@ img { display: block; max-width: 100%; }
 .product-card p.pick-p {
   overflow: visible;
   display: block;
+  font-size: 15px !important;
   -webkit-line-clamp: unset;
   -webkit-box-orient: unset;
 }
