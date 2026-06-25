@@ -654,9 +654,9 @@ img { display: block; max-width: 100%; }
   display: flex; gap: 16px; justify-content: center; list-style: none;
 }
 .footer-socials a {
-  font-size: 16px; font-weight: 400;
-  letter-spacing: 0.06em;
-  color: rgba(250,248,243,0.55); transition: color 0.2s;
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(250,248,243,0.80); transition: color 0.2s;
 }
 .footer-socials a:hover { color: var(--mustard); }
 
