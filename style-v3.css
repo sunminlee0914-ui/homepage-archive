@@ -571,7 +571,7 @@ img { display: block; max-width: 100%; }
 
 /* ── NEWSLETTER — 딥그린 배경 (신뢰·CTA) ────────── */
 .newsletter {
-  padding: 56px 48px; text-align: center;
+  padding: 56px 48px 32px; text-align: center;
   background: var(--forest);
   border-top: none;
 }
