@@ -39,31 +39,29 @@
     <!-- Left: Images -->
     <div class="pd-images">
       <div class="pd-main-image">
-        <div class="pd-product-visual">
-          <div class="pd-visual-group">
-            <div style="display:flex;gap:10px;align-items:flex-end;">
-              <div class="prod-serum" style="width:44px;height:130px;border-radius:3px;background:linear-gradient(170deg,#E8F4E2 0%,#8BBF80 100%);"></div>
-              <div class="prod-serum" style="width:44px;height:145px;border-radius:3px;background:linear-gradient(170deg,#FFF0D4 0%,#E8A848 100%);"></div>
-              <div class="prod-serum" style="width:44px;height:125px;border-radius:3px;background:linear-gradient(170deg,#E8E4F8 0%,#8C80CC 100%);"></div>
-            </div>
-            <div class="pd-visual-glow"></div>
-          </div>
-        </div>
+        <img id="pd-main-img" src="images/collaza.png" alt="내 몸을 이해하게 해준 책들" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
         <button class="wishlist-btn pd-wishlist" aria-label="Wishlist">♡</button>
       </div>
 
       <div class="pd-thumbnails">
-        <div class="pd-thumb pd-thumb-active">
-          <div class="prod-serum" style="width:14px;height:44px;border-radius:2px;background:linear-gradient(170deg,#E8F4E2 0%,#8BBF80 100%);"></div>
+        <div class="pd-thumb pd-thumb-active" onclick="switchImg(this,'images/collaza.png')">
+          <img src="images/collaza.png" alt="책들 모음" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">
         </div>
-        <div class="pd-thumb">
-          <div class="prod-serum" style="width:14px;height:44px;border-radius:2px;background:linear-gradient(170deg,#FFF0D4 0%,#E8A848 100%);"></div>
+        <div class="pd-thumb" onclick="switchImg(this,'images/a-low-carb-high-fat-diet.png')">
+          <img src="images/a-low-carb-high-fat-diet.png" alt="지방을 태우는 몸" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">
         </div>
-        <div class="pd-thumb">
-          <div class="prod-jar" style="width:36px;height:28px;background:linear-gradient(160deg,#F5D090 0%,#E8A848 100%);"></div>
+        <div class="pd-thumb" onclick="switchImg(this,'images/best-meal.png')">
+          <img src="images/best-meal.png" alt="최강의 식사" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">
         </div>
       </div>
     </div>
+    <script>
+      function switchImg(thumb, src) {
+        document.getElementById('pd-main-img').src = src;
+        document.querySelectorAll('.pd-thumb').forEach(t => t.classList.remove('pd-thumb-active'));
+        thumb.classList.add('pd-thumb-active');
+      }
+    </script>
 
     <!-- Right: Info -->
     <div class="pd-info">
@@ -87,10 +85,6 @@
         <div class="pd-meta-row">
           <span class="pd-meta-label">추천 대상</span>
           <span class="pd-meta-value">왜 안 빠지는지 이해하고 싶은 분 · 몸을 보는 시각을 바꾸고 싶은 분</span>
-        </div>
-        <div class="pd-meta-row">
-          <span class="pd-meta-label">측정 기기</span>
-          <span class="pd-meta-value">혈당·케톤 측정기 — 이론을 숫자로 직접 확인하면 완전히 달라져요</span>
         </div>
         <div class="pd-meta-row">
           <span class="pd-meta-label">다영이 한마디</span>
