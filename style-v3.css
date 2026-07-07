@@ -239,6 +239,16 @@ img { display: block; max-width: 100%; }
   max-width: 440px;
 }
 
+.hero-notice {
+  margin-top: 26px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--forest-lite);
+  max-width: 400px;
+  word-break: keep-all;
+}
+
 /* ── BUTTONS ──────────────────────────────────────── */
 /* 기본 버튼: 딥그린 배경 (신뢰·권위) */
 .btn {
@@ -1103,6 +1113,7 @@ img { display: block; max-width: 100%; }
   .hero-image-block { width: 45%; }
   .hero-title { font-size: clamp(34px, 4.5vw, 60px); }
   .hero-desc { font-size: 16px; max-width: 380px; }
+  .hero-notice { font-size: 13px; max-width: 290px; }
   .section { padding: 48px 24px; }
   .products-grid, .catalog-grid { grid-template-columns: repeat(2, 1fr); }
   .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -1145,6 +1156,7 @@ img { display: block; max-width: 100%; }
   .hero-title em { font-style: normal; }
   .hero-desc { display: none; }
   .hero .btn { display: none; }
+  .hero-notice { display: none; }
 
   /* product-card 모바일 */
   .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
