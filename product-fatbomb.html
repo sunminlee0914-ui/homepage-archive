@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>다이어트 영수증 by 살림이 — 팻밤 재료 모음</title>
+  <link rel="stylesheet" href="style-v3.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="site-header">
+    <a href="index.html" class="header-logo"><img src="images/logo.png" alt="다이어트 영수증" /></a>
+    <nav>
+      <ul class="header-nav">
+        <li><a href="index.html#about">브랜드 소개</a></li>
+        <li><a href="catalog.html">제품 목록</a></li>
+        <li><a href="index.html#contact">채널 소식</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="https://www.youtube.com/@다이어트영수증" target="_blank">유튜브 채널</a>
+      <a href="catalog.html" class="cart-icon">제품 보기 &nbsp;<span style="font-size:15px;">→</span></a>
+    </div>
+  </header>
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="pd-breadcrumb">
+    <a href="index.html">홈</a>
+    <span class="pd-breadcrumb-sep">/</span>
+    <a href="catalog.html">제품 목록</a>
+    <span class="pd-breadcrumb-sep">/</span>
+    <span>팻밤</span>
+  </div>
+
+  <!-- ── PRODUCT DETAIL ── -->
+  <section class="pd-section">
+
+    <!-- Left: Images (임시 이미지 — 팻밤 사진 준비되면 교체) -->
+    <div class="pd-images">
+      <div class="pd-main-image" style="overflow:hidden;">
+        <img id="pd-main-img" src="images/cocoa.png" alt="팻밤"
+             style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:12px;display:block;">
+        <button class="wishlist-btn pd-wishlist" aria-label="Wishlist">♡</button>
+      </div>
+
+      <div class="pd-thumbnails">
+        <div class="pd-thumb pd-thumb-active" onclick="switchImg(this,'images/cocoa.png')">
+          <img src="images/cocoa.png" alt="팻밤"
+               style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:6px;">
+        </div>
+        <div class="pd-thumb" onclick="switchImg(this,'images/cacao_powder.png')">
+          <img src="images/cacao_powder.png" alt="재료 사진"
+               style="width:100%;height:100%;object-fit:cover;border-radius:6px;">
+        </div>
+      </div>
+    </div>
+    <script>
+      function switchImg(thumb, src) {
+        document.getElementById('pd-main-img').src = src;
+        document.querySelectorAll('.pd-thumb').forEach(t => t.classList.remove('pd-thumb-active'));
+        thumb.classList.add('pd-thumb-active');
+      }
+    </script>
+
+    <!-- Right: Info -->
+    <div class="pd-info">
+
+      <p class="pd-regimen-step">다영이 직접 검증 · 내돈내산</p>
+
+      <h1 class="pd-product-name">🍫 팻밤 (Fat Bomb)<br><em>다영이 레시피 가이드</em></h1>
+
+      <p class="pd-desc" style="font-size:16px;">
+        녹여서 몰드에 붓고 냉동실에 30분 — 이게 전부예요.<br>
+        단 게 당길 때 초콜릿 대신 하나씩 꺼내 먹으면, 혈당 스파이크 없이 갈망이 딱 잡혀요.
+      </p>
+
+      <div class="pd-meta">
+        <div class="pd-meta-row">
+          <span class="pd-meta-label">기본 재료</span>
+          <span class="pd-meta-value">코코넛 오일 100g · 무설탕 코코아 파우더 20~30g · 버터 30g · 알룰로스 10~20g · 히말라야 소금 한 꼬집</span>
+        </div>
+        <div class="pd-meta-row">
+          <span class="pd-meta-label">선택 재료</span>
+          <span class="pd-meta-value">MCT 오일 · 견과류 토핑 · 콜라겐 파우더</span>
+        </div>
+        <div class="pd-meta-row">
+          <span class="pd-meta-label">만드는 법</span>
+          <span class="pd-meta-value">약불에 재료를 녹여 섞고 → 실리콘 몰드에 붓고 → 냉동실 30분 → 완성. 밀폐용기에 넣어 냉동 보관해요.</span>
+        </div>
+        <div class="pd-meta-row">
+          <span class="pd-meta-label">효과</span>
+          <span class="pd-meta-value">케톤 에너지 공급 · 단맛 갈망 해소 · 단식 중 허기 방어</span>
+        </div>
+        <div class="pd-meta-row">
+          <span class="pd-meta-label">추천 대상</span>
+          <span class="pd-meta-value">오후 간식 끊기 어려운 분 · 방탄커피가 물릴 때 씹는 간식이 필요한 분 · 초콜릿을 못 끊는 분</span>
+        </div>
+      </div>
+
+      <div class="pd-links">
+        <a href="https://www.youtube.com/@다이어트영수증" target="_blank" rel="noopener noreferrer">유튜브 영상 보기</a>
+        <span>·</span>
+        <a href="https://blog.naver.com/godgan17" target="_blank" rel="noopener noreferrer">다영이의 한마디</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 재료 모음 ── -->
+  <section class="pd-related">
+    <div class="pd-related-header">
+      <h2 class="section-title">재료 <em>모음</em></h2>
+    </div>
+
+    <div class="products-grid pd-related-grid">
+
+      <!-- 1. 코코넛 오일 (링크 준비 중) -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/cube_ice.jpg" alt="코코넛 오일" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+        </div>
+        <p class="product-name">🥥 코코넛 오일</p>
+        <p style="font-size:16px;color:var(--forest-mid);margin-bottom:12px;line-height:1.5;"><strong style="color:var(--forest);">다영's Pick :</strong> 팻밤의 베이스가 되는 지방이에요. 상온에서 굳는 성질 덕분에 팻밤이 초콜릿처럼 단단하게 유지돼요. 비정제(엑스트라 버진)로 고르면 은은한 코코넛 향이 살아요.</p>
+        <div class="add-to-cart" style="opacity:.5;">링크 준비 중 <span>→</span></div>
+      </div>
+
+      <!-- 2. 발로나 코코아 파우더 -->
+      <a href="https://link.coupang.com/a/faExSaP9TU" target="_blank" rel="noopener noreferrer" class="product-card" style="text-decoration:none;color:inherit;">
+        <div class="product-img-wrap">
+          <img src="images/cacao_powder.png" alt="발로나 코코아 파우더" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+        </div>
+        <p class="product-name">🍫 발로나 코코아 파우더</p>
+        <p style="font-size:16px;color:var(--forest-mid);margin-bottom:12px;line-height:1.5;"><strong style="color:var(--forest);">다영's Pick :</strong> 발로나는 파티시에들이 신뢰하는 프랑스 최고급 초콜릿 브랜드예요. 팻밤에 넣으면 시판 초콜릿이 부럽지 않은 깊고 묵직한 카카오 향이 나요.</p>
+        <div class="add-to-cart">쿠팡 바로가기 <span>→</span></div>
+      </a>
+
+      <!-- 3a. 무염 목초버터 : 프레지덩트 -->
+      <a href="https://link.coupang.com/a/d0PW9fvbI4" target="_blank" rel="noopener noreferrer" class="product-card" style="text-decoration:none;color:inherit;">
+        <div class="product-img-wrap">
+          <img src="images/president-butter-final.jpg" alt="무염 목초버터 프레지덩트" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+        </div>
+        <p class="product-name">🧈 무염 목초버터 : 프레지덩트</p>
+        <p style="font-size:16px;color:var(--forest-mid);margin-bottom:12px;line-height:1.5;"><strong style="color:var(--forest);">다영's Pick :</strong> 목초 소의 우유 버터라 오메가-3·CLA가 일반 버터보다 높아 지방의 질이 달라요. 깔끔하고 담백해서 팻밤에도 잘 어울려요.</p>
+        <div class="add-to-cart">쿠팡 바로가기 <span>→</span></div>
+      </a>
+
+      <!-- 3b. 무염 목초버터 : 이즈니 -->
+      <a href="https://link.coupang.com/a/d2vp9GZCZU" target="_blank" rel="noopener noreferrer" class="product-card" style="text-decoration:none;color:inherit;">
+        <div class="product-img-wrap">
+          <img src="images/isigny-butter-final.jpg" alt="무염 목초버터 이즈니" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+        </div>
+        <p class="product-name">🧈 무염 목초버터 : 이즈니</p>
+        <p style="font-size:16px;color:var(--forest-mid);margin-bottom:12px;line-height:1.5;"><strong style="color:var(--forest);">다영's Pick :</strong> 프랑스 노르망디 AOC 인증 버터라 유지방이 높고, 팻밤에 넣으면 초콜릿 버터 향이 진하게 살아요. 한 번 써보면 못 돌아간다는 분들도 있어요.</p>
+        <div class="add-to-cart">쿠팡 바로가기 <span>→</span></div>
+      </a>
+
+      <!-- 4. 알룰로스 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/allulose-liquid.jpeg" alt="마이노멀 알룰로스" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+        </div>
+        <p class="product-name">🍬 알룰로스</p>
+        <p style="font-size:16px;color:var(--forest-mid);margin-bottom:12px;line-height:1.5;"><strong style="color:var(--forest);">다영's Pick :</strong> 혈당 스파이크 없이 단맛을 낼 수 있는 천연 감미료예요. 팻밤엔 분말 타입이 더 잘 섞여요. 스테비아보다 뒷맛이 훨씬 깔끔해요.</p>
+        <div style="margin-top:auto;">
+          <a href="https://naver.me/x8kDP2hi" target="_blank" rel="noopener noreferrer" class="add-to-cart" style="margin-top:0;">네이버 바로가기 액체 <span>→</span></a>
+          <a href="https://naver.me/GUTmo3pJ" target="_blank" rel="noopener noreferrer" class="add-to-cart" style="border-top:none;padding-top:6px;margin-top:0;">네이버 바로가기 분말 <span>→</span></a>
+        </div>
+      </div>
+
+      <!-- 5. 히말라야 소금 -->
+      <a href="https://link.coupang.com/a/d2JEc77LW0" target="_blank" rel="noopener noreferrer" class="product-card" style="text-decoration:none;color:inherit;">
+        <div class="product-img-wrap">
+          <img src="images/himalaya-salt.png" alt="산체스 히말라야 핑크소금" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+        </div>
+        <p class="product-name">🧂 히말라야 소금</p>
+        <p style="font-size:16px;color:var(--forest-mid);margin-bottom:12px;line-height:1.5;"><strong style="color:var(--forest);">다영's Pick :</strong> 팻밤에 한 꼬집 넣으면 단맛이 훨씬 입체적으로 살아나요. 천연 미네랄이 풍부한 히말라야 핑크소금을 그라인더로 매번 신선하게 갈아 써요.</p>
+        <div class="add-to-cart">쿠팡 바로가기 <span>→</span></div>
+      </a>
+
+      <!-- 6. MCT 오일 : 마이노멀 -->
+      <a href="https://naver.me/xsZlIzvs" target="_blank" rel="noopener noreferrer" class="product-card" style="text-decoration:none;color:inherit;">
+        <div class="product-img-wrap">
+          <img src="images/MCT%20OIL.webp" alt="마이노멀 MCT 오일" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+        </div>
+        <p class="product-name">💧 MCT 오일 : 마이노멀</p>
+        <p style="font-size:16px;color:var(--forest-mid);margin-bottom:12px;line-height:1.5;"><strong style="color:var(--forest);">다영's Pick :</strong> MCT 오일의 핵심 C8(카프릴산)은 간에서 가장 빠르게 케톤으로 전환되는 지방산이에요. 팻밤에 한 스푼 더하면 케톤 부스팅 효과가 좋아져요.</p>
+        <div class="add-to-cart">네이버 바로가기 <span>→</span></div>
+      </a>
+
+      <!-- 7. 실리콘 몰드 (링크 준비 중) -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/kitchen.png" alt="실리콘 몰드" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+        </div>
+        <p class="product-name">🧊 실리콘 몰드</p>
+        <p style="font-size:16px;color:var(--forest-mid);margin-bottom:12px;line-height:1.5;"><strong style="color:var(--forest);">다영's Pick :</strong> 팻밤을 한입 크기로 굳히는 필수 도구예요. 실리콘이라 얼린 뒤에 톡톡 빼기 편하고, 초콜릿·얼음 몰드 겸용으로 쓸 수 있어요.</p>
+        <div class="add-to-cart" style="opacity:.5;">링크 준비 중 <span>→</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-top">
+
+      <div class="footer-nav">
+        <h4>둘러보기</h4>
+        <ul>
+          <li><a href="index.html">홈</a></li>
+          <li><a href="index.html#about">브랜드 소개</a></li>
+          <li><a href="catalog.html">제품 목록</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-center">
+        <a href="index.html" class="footer-logo"><img src="images/logo.png" alt="다이어트 영수증" /></a>
+        <ul class="footer-socials">
+          <li><a href="https://www.youtube.com/@다이어트영수증" target="_blank" rel="noopener noreferrer">유튜브</a></li>
+          <li><a href="https://www.youtube.com/@다이어트영수증" target="_blank" rel="noopener noreferrer">인스타</a></li>
+          <li><a href="https://blog.naver.com/godgan17" target="_blank" rel="noopener noreferrer">블로그</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-right"></div>
+
+    <div class="footer-bottom">
+      <p>© 2026 다이어트 영수증 by 살림이. All rights reserved.</p>
+      <ul class="footer-legal">
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">이용약관</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
