@@ -936,6 +936,8 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0;
   color: var(--forest-mid);
   line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .pd-price-row {
