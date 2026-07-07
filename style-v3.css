@@ -1072,11 +1072,11 @@ img { display: block; max-width: 100%; }
 .pd-links {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   margin-top: auto;
 }
 .pd-links a {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1085,7 +1085,7 @@ img { display: block; max-width: 100%; }
   transition: color 0.2s, border-color 0.2s;
 }
 .pd-links a:hover { color: var(--forest); border-bottom-color: var(--forest); }
-.pd-links span { color: var(--border); font-size: 12px; }
+.pd-links span { color: var(--border); font-size: 13px; }
 
 .pd-related {
   padding: 80px 48px;
