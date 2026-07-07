@@ -1070,6 +1070,27 @@ img { display: block; max-width: 100%; }
   margin-bottom: 48px;
 }
 
+/* 쿠팡 파트너스 고지 문구 */
+.partners-notice {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--forest-lite);
+  margin-top: 10px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+.footer-partners-notice {
+  grid-column: 1 / -1;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(250,248,243,0.45);
+  margin-bottom: 16px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
 .pd-related-grid {
   grid-template-columns: repeat(4, 1fr) !important;
 }
