@@ -38,20 +38,20 @@
 
     <!-- Left: Images -->
     <div class="pd-images">
-      <div class="pd-main-image" style="overflow:hidden;">
-        <img id="pd-main-img" src="images/cocoa_recipe-guide_1.png" alt="방탄코코아 레시피 가이드"
-             style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:12px;display:block;">
+      <div class="pd-main-image" style="overflow:hidden;position:relative;flex:none;min-height:0;display:block;background:transparent;">
+        <img id="pd-main-img" src="images/cocoa_1.png" alt="다영이가 직접 만든 방탄코코아"
+             style="width:100%;height:auto;border-radius:12px;display:block;">
         <button class="wishlist-btn pd-wishlist" aria-label="Wishlist">♡</button>
       </div>
 
       <div class="pd-thumbnails">
-        <div class="pd-thumb pd-thumb-active" onclick="switchImg(this,'images/cocoa_recipe-guide_1.png')">
+        <div class="pd-thumb pd-thumb-active" onclick="switchImg(this,'images/cocoa_1.png')">
+          <img src="images/cocoa_1.png" alt="다영이가 직접 만든 방탄코코아"
+               style="width:100%;height:100%;object-fit:cover;border-radius:6px;">
+        </div>
+        <div class="pd-thumb" onclick="switchImg(this,'images/cocoa_recipe-guide_1.png')">
           <img src="images/cocoa_recipe-guide_1.png" alt="레시피 가이드"
                style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:6px;">
-        </div>
-        <div class="pd-thumb" onclick="switchImg(this,'images/cocoa.png')">
-          <img src="images/cocoa.png" alt="방탄코코아 완성"
-               style="width:100%;height:100%;object-fit:cover;border-radius:6px;">
         </div>
         <div class="pd-thumb" onclick="switchImg(this,'images/bulletproof-cocoa.png')">
           <img src="images/bulletproof-cocoa.png" alt="재료 사진"
@@ -75,18 +75,23 @@
       <h1 class="pd-product-name">🍫 방탄코코아<br><em>다영이 레시피 가이드</em></h1>
 
       <p class="pd-desc" style="font-size:16px;">
-        저는 코코넛 밀크 아이스큐브를 하나만 (20g) 쓰기 때문에 콜라겐 파우더를 꼭 한 스푼씩 넣어요.<br>
-        오후 2~3시 출출할 때 과자나 달달한 음료 대신 — 커피 못 드시는 분들, 저녁 한 잔으로도 딱이에요.
+        커피가 부담스러운 날, 오후 출출할 때 딱인 코코아예요.<br>
+        진한 무설탕 코코아에 버터와 MCT 오일을 넣고 부드럽게 갈면 포만감이 오래가요.<br>
+        저는 코코넛 밀크를 조금만 써서, 콜라겐 한 스푼을 꼭 더해요.
       </p>
 
       <div class="pd-meta">
         <div class="pd-meta-row">
           <span class="pd-meta-label">기본 재료</span>
-          <span class="pd-meta-value">뜨거운 물 120~150ml · 코코아 파우더 15~20g · 버터 10~20g · MCT 오일 5~10ml · 코코넛 밀크 20~50ml</span>
+          <span class="pd-meta-value">뜨거운 물 120~150ml · 무설탕 코코아 15~20g · 버터 10~20g · MCT 오일 5~10ml · 코코넛 밀크 20~50ml</span>
         </div>
         <div class="pd-meta-row">
           <span class="pd-meta-label">선택 재료</span>
-          <span class="pd-meta-value">알룰로스 또는 바나나 · 히말라야 소금/죽염 · 생크림 · 콜라겐 파우더</span>
+          <span class="pd-meta-value">알룰로스 소량(또는 바나나 1/4개) · 소금 한 꼬집 · 생크림 1큰술 · 콜라겐 파우더 1스푼</span>
+        </div>
+        <div class="pd-meta-row">
+          <span class="pd-meta-label">만드는 법</span>
+          <span class="pd-meta-value">① 뜨거운 물에 무설탕 코코아를 먼저 풀어요<br>② 버터 · MCT 오일 · 코코넛 밀크를 넣어요<br>③ 전자레인지에 30초 데워요<br>④ 핸드블렌더로 10~15초, 거품이 살짝 올라오면 완성</span>
         </div>
         <div class="pd-meta-row">
           <span class="pd-meta-label">효과</span>
@@ -94,7 +99,7 @@
         </div>
         <div class="pd-meta-row">
           <span class="pd-meta-label">추천 대상</span>
-          <span class="pd-meta-value">커피 못 드시는 분 · 초콜릿 풍미 선호 · 오후 간식을 대체하고 싶은 분</span>
+          <span class="pd-meta-value">커피가 부담스러운 분 · 초콜릿 풍미를 좋아하는 분 · 오후 간식을 대체하고 싶은 분</span>
         </div>
         <div class="pd-meta-row">
           <span class="pd-meta-label">코코아 선택</span>
