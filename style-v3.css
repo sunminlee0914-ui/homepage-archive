@@ -294,6 +294,35 @@ img { display: block; max-width: 100%; }
 }
 .btn-arrow::after { content: '→'; font-size: 13px; }
 
+/* 히어로 CTA 버튼 그룹 */
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+/* 오픈채팅 버튼: 머스터드 채움 — 하단 CTA와 통일, 시선 집중 */
+.btn-chat {
+  background: var(--mustard);
+  color: var(--forest);
+  border: 1px solid var(--mustard);
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  gap: 9px;
+  box-shadow: 0 4px 14px rgba(242, 182, 89, 0.35);
+}
+.btn-chat:hover {
+  background: var(--mustard-dk);
+  color: var(--forest);
+  border-color: var(--mustard-dk);
+}
+.btn-chat-ico {
+  font-size: 16px;
+  line-height: 1;
+}
+
 .btn-dark {
   background: var(--forest);
   color: var(--cream);
