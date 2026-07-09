@@ -319,8 +319,11 @@ img { display: block; max-width: 100%; }
   border-color: var(--mustard-dk);
 }
 .btn-chat-ico {
-  font-size: 16px;
-  line-height: 1;
+  width: 19px;
+  height: 19px;
+  flex: none;
+  display: block;
+  margin-top: -1px;
 }
 
 .btn-dark {
