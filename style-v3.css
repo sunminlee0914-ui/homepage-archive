@@ -394,6 +394,76 @@ img { display: block; max-width: 100%; }
   font-weight: 700 !important;
 }
 
+/* ────────────────────────────────────────────────
+   모바일 하단 플로팅 공구 바 (announce.js가 생성·관리)
+──────────────────────────────────────────────── */
+.gonggu-fab {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  z-index: 300;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 14px 13px 18px;
+  background: rgba(6, 40, 32, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(242, 182, 89, 0.55);
+  border-radius: 16px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.32);
+  text-decoration: none;
+  transform: translateY(130%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s;
+}
+.gonggu-fab.is-visible { transform: translateY(0); opacity: 1; }
+@media (max-width: 768px) {
+  .gonggu-fab { display: flex; }
+}
+
+.gonggu-fab-txt {
+  color: var(--cream);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+.gonggu-fab-txt strong { color: var(--mustard); font-weight: 800; }
+
+.gonggu-fab-btn {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  background: var(--mustard);
+  color: var(--forest);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.gonggu-fab-close {
+  position: absolute;
+  top: -10px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--forest);
+  border: 1px solid rgba(242, 182, 89, 0.55);
+  border-radius: 50%;
+  color: rgba(250, 248, 243, 0.85);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
 /* ── SECTION COMMONS ──────────────────────────────── */
 .section { padding: 64px 48px; }
 

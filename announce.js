@@ -162,6 +162,51 @@
     }
   }
 
+  // ── 모바일 하단 플로팅 바 (공구 페이지 제외, 공구 기간에만) ──────────────
+  if (!isLanding && ph !== 'closed' && sessionStorage.getItem('gonggu-fab-closed') !== '1') {
+    var fabTxt, fabBtn;
+    if (ph === 'open') {
+      var fabLeft = daysBetween(now, CLOSE_DATE) - 1;
+      fabTxt = '🔥 <strong>첫 공구 진행 중</strong> · ' + (fabLeft <= 0 ? '오늘 마감!' : '7.26(일) 마감');
+      fabBtn = '지금 보기 →';
+    } else if (ph === 'pre') {
+      fabTxt = '⚡ <strong>사전 오픈!</strong> 시크릿 링크가 채팅방에 떴어요';
+      fabBtn = '보러 가기 →';
+    } else {
+      var fabD = daysBetween(now, OPEN_DATE);
+      fabTxt = '💙 <strong>첫 공구 ' + (fabD === 0 ? 'D-DAY' : 'D-' + fabD) + '</strong> · 더클린 방탄커피 7.20 오픈';
+      fabBtn = '미리 보기 →';
+    }
+    var fab = document.createElement('a');
+    fab.href = 'gonggu.html';
+    fab.className = 'gonggu-fab';
+    fab.id = 'gonggu-fab';
+    fab.innerHTML =
+      '<span class="gonggu-fab-txt">' + fabTxt + '</span>' +
+      '<span class="gonggu-fab-btn">' + fabBtn + '</span>' +
+      '<button class="gonggu-fab-close" aria-label="공구 알림 닫기">×</button>';
+    document.body.appendChild(fab);
+
+    fab.querySelector('.gonggu-fab-close').addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      fab.classList.remove('is-visible');
+      sessionStorage.setItem('gonggu-fab-closed', '1');
+    });
+
+    // 살짝 스크롤하면 아래에서 등장 (첫 화면은 가리지 않음)
+    var fabShown = false;
+    function fabCheck() {
+      if (!fabShown && window.scrollY > 240) {
+        fabShown = true;
+        fab.classList.add('is-visible');
+        window.removeEventListener('scroll', fabCheck);
+      }
+    }
+    window.addEventListener('scroll', fabCheck, { passive: true });
+    fabCheck();
+  }
+
   // ── 랜딩 페이지 카운트다운(있을 때만) ──────────────
   var cd = document.getElementById('gg-countdown');
   var cdWrap = document.getElementById('gg-cd-wrap');
