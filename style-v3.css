@@ -1695,6 +1695,23 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
   padding: 72px 24px;
 }
+.gg-photo {
+  margin: 34px 0 38px;
+}
+.gg-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(11, 73, 58, 0.12);
+}
+.gg-photo figcaption {
+  margin-top: 12px;
+  text-align: center;
+  font-family: 'KoPubWorldBatang', serif;
+  font-size: 14px;
+  color: var(--ink-lite);
+  letter-spacing: 0.02em;
+}
 .gg-story h2 {
   font-family: 'ChosunGulim', 'Pretendard', serif;
   font-size: clamp(24px, 3.5vw, 32px);
