@@ -367,6 +367,33 @@ img { display: block; max-width: 100%; }
   100% { transform: translateX(-50%); }
 }
 
+/* 공구 기간 — 마퀴가 공구 알림으로 변신 (announce.js가 관리) */
+.marquee-wrap.is-gonggu { cursor: pointer; transition: background-color 0.25s; }
+.marquee-wrap.is-gonggu:hover { background-color: var(--mustard-dk); }
+.marquee-wrap.is-gonggu:hover .marquee-track { animation-play-state: paused; }
+.marquee-wrap.is-gonggu .marquee-track span { font-weight: 600; }
+
+.marquee-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 14px;
+  margin-top: -3px;
+  background: var(--forest);
+  color: var(--mustard) !important;
+  border-radius: 100px;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+}
+.marquee-pill.is-hot {
+  background: #C0392B;
+  color: #fff !important;
+}
+.marquee-arrow-hint {
+  color: var(--forest-mid) !important;
+  font-weight: 700 !important;
+}
+
 /* ── SECTION COMMONS ──────────────────────────────── */
 .section { padding: 64px 48px; }
 
@@ -1347,6 +1374,143 @@ img { display: block; max-width: 100%; }
 }
 
 /* ────────────────────────────────────────────────
+   히어로 공구 카드 (index.html — 우측 이미지 위)
+──────────────────────────────────────────────── */
+.hero-gonggu-card {
+  position: absolute;
+  top: 36px;
+  left: calc(48% + 28px); /* 이미지 블록(우측 52%) 안쪽 왼편 — 실루엣을 가리지 않게 */
+  z-index: 3;
+  width: 320px;
+  padding: 26px 26px 22px;
+  background: rgba(6, 40, 32, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(242, 182, 89, 0.45);
+  border-radius: 18px;
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.32);
+  color: var(--cream);
+  animation: hgc-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.hero-gonggu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.4);
+}
+@keyframes hgc-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hgc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.hgc-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--mustard);
+}
+.hgc-badge {
+  padding: 3px 12px;
+  background: var(--mustard);
+  color: var(--forest);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.hgc-badge.is-open {
+  background: #C0392B;
+  color: #fff;
+  animation: announce-pulse 1.4s ease-in-out infinite;
+}
+
+.hgc-title {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.45;
+  margin-bottom: 4px;
+}
+.hgc-title em { font-style: normal; color: var(--mustard); }
+.hgc-note {
+  font-size: 13px;
+  color: rgba(250, 248, 243, 0.66);
+  margin-bottom: 16px;
+}
+
+.hgc-schedule {
+  border-top: 1px solid rgba(250, 248, 243, 0.16);
+  padding-top: 14px;
+  margin-bottom: 18px;
+}
+.hgc-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 3px 0;
+  font-size: 14px;
+}
+.hgc-row-label {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(250, 248, 243, 0.55);
+  white-space: nowrap;
+}
+.hgc-row-val { font-weight: 600; color: rgba(250, 248, 243, 0.92); text-align: right; }
+.hgc-row-val strong { color: var(--mustard); font-weight: 800; }
+.hgc-tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 8px;
+  background: rgba(242, 182, 89, 0.18);
+  border: 1px solid rgba(242, 182, 89, 0.45);
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--mustard);
+  vertical-align: 1px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.hgc-tag:hover { background: var(--mustard); color: var(--forest); }
+
+.hgc-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 0;
+  background: var(--mustard);
+  color: var(--forest);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.hgc-cta:hover { background: var(--mustard-dk); }
+.hgc-cta .announce-arrow { transition: transform 0.2s; }
+.hgc-cta:hover .announce-arrow { transform: translateX(3px); }
+
+@media (max-width: 1180px) {
+  .hero-gonggu-card { width: 290px; top: 28px; left: calc(55% + 20px); padding: 22px 22px 18px; } /* 이미지 블록 45% 기준 */
+  .hgc-title { font-size: 17px; }
+}
+@media (max-width: 600px) {
+  /* 모바일은 상단 공지 바가 역할 대신 — 카드 숨김 */
+  .hero-gonggu-card { display: none; }
+}
+
+/* ────────────────────────────────────────────────
    공구 랜딩 페이지 (gonggu.html)
 ──────────────────────────────────────────────── */
 .gg-hero {
@@ -1529,4 +1693,22 @@ img { display: block; max-width: 100%; }
   .gg-cd-unit { min-width: 62px; padding: 12px 6px; }
   .gg-cd-num { font-size: 30px; }
   .gg-countdown { gap: 10px; }
+}
+
+/* ────────────────────────────────────────────────
+   공구 상품 안내 배너 (PC 가로형 / 모바일 세로형)
+──────────────────────────────────────────────── */
+.gg-products-banner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 24px 0;
+}
+.gg-products-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 12px 36px rgba(11, 73, 58, 0.10);
+}
+@media (max-width: 700px) {
+  .gg-products-banner { padding: 36px 16px 0; }
 }

@@ -1,16 +1,28 @@
 /* ────────────────────────────────────────────────
-   공구 공지 바 + 카운트다운
-   여기 두 날짜만 바꾸면 전 페이지에 반영됩니다.
+   공구 공지 바 + 히어로 카드 + 카운트다운
+   여기 세 날짜만 바꾸면 전 페이지에 반영됩니다.
 ──────────────────────────────────────────────── */
 (function () {
   // ── 설정 ─────────────────────────────
-  var OPEN_DATE  = new Date(2026, 6, 20, 0, 0, 0);  // 오픈: 2026-07-20 (월은 0부터 → 6 = 7월)
-  var CLOSE_DATE = new Date(2026, 6, 23, 0, 0, 0);  // 마감: 2026-07-23 (이 시각 지나면 배너 숨김)
+  var PRE_DATE   = new Date(2026, 6, 18, 0, 0, 0);  // 사전 오픈: 2026-07-18(토) (월은 0부터 → 6 = 7월)
+  var OPEN_DATE  = new Date(2026, 6, 20, 0, 0, 0);  // 정식 오픈: 2026-07-20(월)
+  var CLOSE_DATE = new Date(2026, 6, 27, 0, 0, 0);  // 마감: 2026-07-26(일) 자정까지 → 27일 0시에 숨김
 
   function daysBetween(from, to) {
     var ms = new Date(to).setHours(0,0,0,0) - new Date(from).setHours(0,0,0,0);
     return Math.round(ms / 86400000);
   }
+
+  // 현재 단계: 'before' | 'pre' | 'open' | 'closed'
+  function phase(t) {
+    if (t >= CLOSE_DATE) return 'closed';
+    if (t >= OPEN_DATE)  return 'open';
+    if (t >= PRE_DATE)   return 'pre';
+    return 'before';
+  }
+
+  var now = new Date();
+  var ph  = phase(now);
 
   // ── 상단 공지 바 ──────────────
   // 랜딩 페이지(gonggu.html)에는 바를 넣지 않음 — 이미 그 페이지니까.
@@ -18,7 +30,7 @@
   var bar = document.getElementById('announce-bar');
 
   // 마크업이 없는 페이지엔 자동으로 삽입 (index 외 전 페이지 공통 노출)
-  if (!bar && !isLanding) {
+  if (!bar && !isLanding && ph !== 'closed') {
     bar = document.createElement('div');
     bar.className = 'announce-bar';
     bar.id = 'announce-bar';
@@ -34,20 +46,28 @@
   }
 
   if (bar) {
-    var now    = new Date();
     var ddayEl = document.getElementById('announce-dday');
     var textEl = document.getElementById('announce-text');
     var ctaEl  = document.getElementById('announce-cta-label');
 
-    if (sessionStorage.getItem('gonggu-announce-closed') === '1' || now >= CLOSE_DATE) {
+    if (sessionStorage.getItem('gonggu-announce-closed') === '1' || ph === 'closed') {
       // 세션 중 닫았거나 마감 이후 — 배너 숨김
       bar.classList.add('is-hidden');
     } else {
-      if (now >= OPEN_DATE) {
-        // 오픈 기간 — 마감 임박 강조
-        if (ddayEl) { ddayEl.textContent = '지금 오픈'; ddayEl.classList.add('is-open'); }
-        if (textEl) { textEl.innerHTML = '제 인생 첫 공구, <strong>지금 진행 중!</strong>'; }
+      if (ph === 'open') {
+        // 본 공구 기간 — 마감 D-day 강조
+        var dLeft = daysBetween(now, CLOSE_DATE) - 1; // 마감일(7/26)까지 남은 날
+        if (ddayEl) {
+          ddayEl.textContent = dLeft <= 0 ? '오늘 마감' : '마감 D-' + dLeft;
+          ddayEl.classList.add('is-open');
+        }
+        if (textEl) { textEl.innerHTML = '제 인생 첫 공구, <strong>지금 진행 중!</strong> 7월 26일(일)까지'; }
         if (ctaEl)  { ctaEl.textContent = '혜택 보러가기'; }
+      } else if (ph === 'pre') {
+        // 사전 오픈 기간 — 오픈채팅방 단독 릴리즈
+        if (ddayEl) { ddayEl.textContent = '사전 오픈'; ddayEl.classList.add('is-open'); }
+        if (textEl) { textEl.innerHTML = '제 인생 첫 공구, <strong>시크릿 링크</strong>가 다영 오픈채팅방에 떴어요! 정식 오픈 7월 20일(월)'; }
+        if (ctaEl)  { ctaEl.textContent = '미리 보러가기'; }
       } else {
         // 오픈 전 — D-day 카운트다운
         var d = daysBetween(now, OPEN_DATE);
@@ -66,6 +86,82 @@
     }
   }
 
+  // ── 히어로 공구 카드 (index.html) ──────────────
+  var heroCard = document.getElementById('hero-gonggu-card');
+  if (heroCard) {
+    if (ph === 'closed') {
+      heroCard.style.display = 'none';
+    } else {
+      var badge = document.getElementById('hgc-badge');
+      var note  = document.getElementById('hgc-note');
+      if (ph === 'open') {
+        var dL = daysBetween(now, CLOSE_DATE) - 1;
+        if (badge) { badge.textContent = dL <= 0 ? '오늘 마감!' : '진행 중 · 마감 D-' + dL; badge.classList.add('is-open'); }
+        if (note)  { note.textContent = '7월 26일(일)까지, 놓치지 마세요'; }
+      } else if (ph === 'pre') {
+        if (badge) { badge.textContent = '사전 오픈'; badge.classList.add('is-open'); }
+        if (note)  { note.textContent = '시크릿 링크, 지금 채팅방에만 있어요'; }
+      } else {
+        var dO = daysBetween(now, OPEN_DATE);
+        if (badge) badge.textContent = dO === 0 ? 'D-DAY' : 'D-' + dO;
+      }
+    }
+  }
+
+  // ── 마퀴(노란 띠) — 공구 기간엔 공구 알림으로 변신 ──────────────
+  // 마감 후엔 이 코드가 실행되지 않아 원래 브랜드 키워드로 자동 복귀
+  var mqTrack = document.querySelector('.marquee-track');
+  if (mqTrack && ph !== 'closed') {
+    var pillMain, items;
+    if (ph === 'open') {
+      var mqLeft = daysBetween(now, CLOSE_DATE) - 1;
+      pillMain = '<span class="marquee-pill is-hot">' + (mqLeft <= 0 ? '오늘 마감' : '마감 D-' + mqLeft) + '</span>';
+      items = [
+        '💙 제 인생 첫 공구, 지금 진행 중',
+        pillMain,
+        '더클린 방탄원두',
+        '분말형 방탄커피',
+        '7월 26일(일)까지',
+        '<span class="marquee-arrow-hint">자세히 보기 →</span>'
+      ];
+    } else if (ph === 'pre') {
+      pillMain = '<span class="marquee-pill is-hot">사전 오픈</span>';
+      items = [
+        '💙 제 인생 첫 공구',
+        pillMain,
+        '시크릿 링크, 채팅방에 떴어요',
+        '더클린 방탄원두',
+        '분말형 방탄커피',
+        '정식 오픈 7월 20일(월)',
+        '<span class="marquee-arrow-hint">자세히 보기 →</span>'
+      ];
+    } else {
+      var mqD = daysBetween(now, OPEN_DATE);
+      pillMain = '<span class="marquee-pill">' + (mqD === 0 ? 'D-DAY' : 'D-' + mqD) + '</span>';
+      items = [
+        '💙 제 인생 첫 공구',
+        pillMain,
+        '7월 20일(월) 오픈',
+        '더클린 방탄원두',
+        '분말형 방탄커피',
+        '시크릿 링크는 채팅방에 제일 먼저',
+        '<span class="marquee-arrow-hint">자세히 보기 →</span>'
+      ];
+    }
+    var seq = items.map(function (it) {
+      return (it.indexOf('<span') === 0 ? it : '<span>' + it + '</span>') + '<span class="marquee-dot">·</span>';
+    }).join('');
+    mqTrack.innerHTML = seq + seq; // 두 벌 복제 — 끊김 없는 루프 유지
+
+    var mqWrap = mqTrack.closest('.marquee-wrap');
+    if (mqWrap) {
+      mqWrap.classList.add('is-gonggu');
+      mqWrap.setAttribute('role', 'link');
+      mqWrap.setAttribute('aria-label', '공구 안내 페이지로 이동');
+      mqWrap.addEventListener('click', function () { location.href = 'gonggu.html'; });
+    }
+  }
+
   // ── 랜딩 페이지 카운트다운(있을 때만) ──────────────
   var cd = document.getElementById('gg-countdown');
   var cdWrap = document.getElementById('gg-cd-wrap');
@@ -73,12 +169,18 @@
     function pad(n){ return (n < 10 ? '0' : '') + n; }
     function tick() {
       var t = new Date();
-      if (t >= OPEN_DATE) {
-        // 오픈됨 → 카운트다운을 오픈 배지로 교체
-        if (cdWrap) {
-          cdWrap.innerHTML = '<span class="gg-open-badge">🎉 지금 오픈 중이에요!</span>';
-        }
+      var p = phase(t);
+      if (p === 'closed') {
+        if (cdWrap) cdWrap.innerHTML = '<span class="gg-open-badge" style="background:rgba(250,248,243,0.14);">이번 공구는 마감되었어요 🙏 다음에 또 만나요</span>';
         return;
+      }
+      if (p === 'open') {
+        if (cdWrap) cdWrap.innerHTML = '<span class="gg-open-badge">🎉 지금 오픈 중 · 7월 26일(일) 마감</span>';
+        return;
+      }
+      if (p === 'pre') {
+        var pb = document.getElementById('gg-prenote');
+        if (pb) pb.style.display = 'block';
       }
       var diff = Math.floor((OPEN_DATE - t) / 1000);
       var days = Math.floor(diff / 86400);

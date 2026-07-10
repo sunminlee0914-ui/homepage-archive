@@ -47,14 +47,26 @@
         <div class="gg-cd-unit"><span class="gg-cd-num" id="gg-secs">00</span><span class="gg-cd-label">SEC</span></div>
       </div>
     </div>
-    <p class="gg-open-date">2026년 7월 20일(월) 오픈 예정</p>
+    <p class="gg-open-date">
+      정식 오픈 <strong style="color:var(--mustard);">7월 20일(월)</strong> ~ 마감 7월 26일(일) · 7일간
+    </p>
+    <p id="gg-prenote" style="display:none;margin-top:10px;">
+      <a href="https://open.kakao.com/o/pXrScPyi" target="_blank" rel="noopener noreferrer"
+         style="display:inline-block;padding:8px 20px;background:rgba(242,182,89,0.16);border:1px solid rgba(242,182,89,0.5);border-radius:100px;font-size:14px;font-weight:700;color:var(--mustard);">
+        ⚡ 사전 오픈 중 — 시크릿 링크가 채팅방에 떠 있어요 →
+      </a>
+    </p>
 
     <div class="gg-cta-row">
       <a href="https://open.kakao.com/o/pXrScPyi" target="_blank" rel="noopener noreferrer" class="gg-btn-primary">
-        오픈채팅방에서 소식 받기 →
+        💬 시크릿 링크 먼저 받기 →
       </a>
       <a href="#story" class="gg-btn-ghost">이야기 먼저 읽어보기</a>
     </div>
+    <p style="margin-top:18px;font-size:14px;color:rgba(250,248,243,0.62);line-height:1.7;">
+      공구 링크는 <strong style="color:var(--mustard);">7월 18일(토), 오픈채팅방에 가장 먼저</strong> 떠요.<br>
+      지금 들어와 계시면 놓칠 일 없어요.
+    </p>
   </section>
 
   <!-- ── 스토리 ── -->
@@ -110,9 +122,12 @@
     </p>
 
     <p>
-      사실 처음 받은 협업 제안은 커피가 아니었어요. 하지만 저는 고민 끝에 먼저 말씀드렸어요.
-      원두를 하고 싶다고요. 원래 원두는 공구를 안 하신다는 걸, <strong>제가 졸라서(정말요)</strong>
-      좋은 가격으로 열게 됐어요.
+      회사에서 먼저 협업 제안을 주셨어요. 그런데 그 제안 안에, 커피는 없었어요.
+      커피 이야기를 꺼낸 건 저였어요. 협업 이야기가 나오기 훨씬 전부터 좋아했고,
+      몇 년을 제 돈 주고 사 마시며 아껴온 커피거든요.
+      처음 파는 물건이라면 이것밖에 없다고 생각했어요.
+      그래서 <strong>제가 졸랐어요(정말요).</strong>
+      그렇게 제안에도 없던 커피 공구가, 좋은 가격으로 열리게 됐어요.
     </p>
     <p>
       그리고 맛있다는 제 혀만 믿고 소개하고 싶지는 않았어요. 이게 정말 어떤 원두인지,
@@ -121,41 +136,18 @@
     </p>
   </section>
 
-  <!-- ── 이번 공구 두 제품 ── -->
+  <!-- ── 공구 상품 안내 (배너) ── -->
+  <section class="gg-products-banner">
+    <picture>
+      <!-- 모바일: 세로형 배너 / PC: 가로형 배너 -->
+      <source media="(max-width: 700px)" srcset="images/gonggu-products-mobile.png">
+      <img src="images/gonggu-products-wide.png"
+           alt="공구 상품 안내 — 더클린 커피 카페인·디카페인 원두, 더클린 방탄커피 분말형">
+    </picture>
+  </section>
+
+  <!-- ── 레시피 안내 ── -->
   <section class="section" style="padding-top:24px;">
-    <div class="featured-header">
-      <div>
-        <p class="section-label">이번 공구, 딱 두 가지</p>
-        <h2 class="section-title">직접 내려도, <em>간편하게 타도</em></h2>
-      </div>
-    </div>
-
-    <div class="products-grid" style="grid-template-columns:repeat(2,1fr);max-width:760px;margin:0 auto;gap:28px;">
-      <!-- 원두 -->
-      <div class="product-card">
-        <div class="product-img-wrap">
-          <img src="images/cleancoffee_columbia.png" alt="더클린 방탄원두" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
-        </div>
-        <p class="product-name">☕ 더클린 방탄원두</p>
-        <p class="pick-p" style="font-size:15px;color:var(--forest-mid);line-height:1.7;margin-bottom:6px;">
-          직접 내려 드시는 프리미엄 원두. 이중 핸드픽으로 결점두를 골라내고,
-          제3연구기관 곰팡이 독소 테스트까지 거쳤어요.
-        </p>
-      </div>
-
-      <!-- 분말형 -->
-      <div class="product-card">
-        <div class="product-img-wrap">
-          <img src="images/coffee-final.jpg" alt="분말형 더클린 방탄커피" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
-        </div>
-        <p class="product-name">🥄 분말형 더클린 방탄커피</p>
-        <p class="pick-p" style="font-size:15px;color:var(--forest-mid);line-height:1.7;margin-bottom:6px;">
-          물에 타기만 하면 완성. 바쁜 아침에도, 밖에서도
-          간편하게 즐기는 방탄커피예요.
-        </p>
-      </div>
-    </div>
-
     <!-- 레시피 안내 -->
     <div style="max-width:560px;margin:36px auto 0;text-align:center;padding:22px 24px;background:var(--cream-alt);border:1px solid var(--border);border-radius:14px;">
       <p style="font-size:16px;color:var(--ink-mid);margin-bottom:14px;">
@@ -199,8 +191,8 @@
       <div class="gg-perk">
         <span class="gg-perk-ico">💰</span>
         <div class="gg-perk-txt">
-          <strong>졸라서 만든 공구가</strong>
-          <span>원래 원두는 공구를 안 하는 곳이에요. 제가 졸라서(정말요) 좋은 가격으로 열었어요.</span>
+          <strong>제안에 없던 공구예요</strong>
+          <span>협업 제안에 커피는 없었어요. 오래 마셔온 제가 졸라서(정말요) 좋은 가격으로 열게 된 공구예요.</span>
         </div>
       </div>
     </div>
@@ -209,9 +201,9 @@
   <!-- ── 하단 CTA ── -->
   <section class="gg-final">
     <h3>요양병원 책상에서 시작한 채널의 첫 공구,<br>늘 곁에 있어주신 분들께 먼저 알립니다.</h3>
-    <p class="gg-open-date" style="margin-bottom:28px;">7월 20일, 좋은 가격으로 만나요 💙<br>오픈 소식과 혜택은 오픈채팅방에서 가장 먼저 받아보실 수 있어요.</p>
+    <p class="gg-open-date" style="margin-bottom:28px;">7월 20일(월)부터 26일(일)까지, 딱 7일간 좋은 가격으로 만나요 💙<br>공구 시크릿 링크는 7월 18일(토), 오픈채팅방에 가장 먼저 떠요.</p>
     <a href="https://open.kakao.com/o/pXrScPyi" target="_blank" rel="noopener noreferrer" class="gg-btn-primary" style="padding:18px 44px;font-size:17px;">
-      오픈채팅방 입장하기 →
+      💬 시크릿 링크 먼저 받기 →
     </a>
   </section>
 
