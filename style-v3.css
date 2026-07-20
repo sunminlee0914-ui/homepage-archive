@@ -1742,6 +1742,32 @@ img { display: block; max-width: 100%; }
 }
 .gg-btn-ghost:hover { border-color: var(--mustard); }
 
+/* 공구 구매 버튼 줄 (제품 2개 + 채팅) — 모바일에서 전체폭 세로 정렬 */
+.gg-buy-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 36px;
+}
+.gg-btn-primary.is-alt {
+  background: var(--forest);
+  color: var(--cream);
+}
+.gg-btn-ghost.is-dark {
+  border-color: rgba(11, 73, 58, 0.32);
+  color: var(--forest);
+}
+.gg-btn-ghost.is-dark:hover { border-color: var(--mustard); }
+@media (max-width: 640px) {
+  .gg-buy-row { flex-direction: column; gap: 10px; }
+  .gg-buy-row .gg-btn-primary,
+  .gg-buy-row .gg-btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* 스토리 본문 */
 .gg-story {
   max-width: 680px;

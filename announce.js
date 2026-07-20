@@ -62,7 +62,7 @@
           ddayEl.classList.add('is-open');
         }
         if (textEl) { textEl.innerHTML = '제 인생 첫 공구, <strong>지금 진행 중!</strong> 7월 26일(일)까지'; }
-        if (ctaEl)  { ctaEl.textContent = '혜택 보러가기'; }
+        if (ctaEl)  { ctaEl.textContent = '지금 구매하기'; }
       } else if (ph === 'pre') {
         // 사전 오픈 기간 — 오픈채팅방 단독 릴리즈
         if (ddayEl) { ddayEl.textContent = '사전 오픈'; ddayEl.classList.add('is-open'); }
