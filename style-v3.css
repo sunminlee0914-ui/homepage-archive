@@ -1350,17 +1350,67 @@ img { display: block; max-width: 100%; }
 @media (max-width: 600px) {
   .header-nav { display: none; }
   .products-grid, .catalog-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .hero { height: auto; padding: 18px 24px; justify-content: center; min-height: unset; }
-  .hero-image-block { display: none; }
-  .hero-content { padding: 0; max-width: 100%; text-align: center; }
-  .hero-eyebrow { display: none; }
-  .hero-title { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0; white-space: nowrap; }
-  .hero-title br { display: none; }
-  .hero-title em { font-style: normal; }
-  .hero-desc { display: none; }
-  .hero-hand { display: none; }
-  .hero .btn { display: none; }
-  .hero-notice { display: none; }
+  /* 모바일 대문(히어로) — 이미지 + 카피 + CTA 전체 노출, 세로 스택 */
+  .hero {
+    height: auto;
+    min-height: unset;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 0 0 38px;
+  }
+  .hero-image-block {
+    display: block;
+    position: relative;
+    z-index: 1; /* order 재배치로 .hero-bg에 가려지지 않도록 */
+    order: -1;
+    width: 100%;
+    height: 34vh;
+    min-height: 210px;
+    max-height: 320px;
+  }
+  .hero-image-block img { object-position: center 34%; }
+  .hero-content { padding: 30px 24px 0; max-width: 100%; text-align: center; }
+  .hero-eyebrow {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    white-space: normal;
+  }
+  .hero-title br { display: block; }
+  .hero-title em { font-style: italic; font-size: 0.86em; white-space: normal; }
+  .hero-desc {
+    display: block;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 100%;
+    margin: 0 auto 16px;
+    word-break: keep-all;
+  }
+  .hero-hand { display: block; font-size: 17px; margin-bottom: 24px; }
+  .hero-cta { flex-direction: column; align-items: stretch; gap: 10px; }
+  .hero .btn {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    padding: 16px 20px;
+    font-size: 14px;
+  }
+  .hero-notice {
+    display: block;
+    font-size: 11px;
+    line-height: 1.6;
+    max-width: 100%;
+    margin-top: 22px;
+  }
 
   /* product-card 모바일 */
   .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
