@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>자료실 — 다이어트 영수증 by 살림이</title>
+  <meta name="description" content="다이어트 영수증 채널에서 나눠드리는 PDF 자료 모음. 식단 기록지, 가이드, 체크리스트를 열어보고 저장하실 수 있어요." />
+  <link rel="stylesheet" href="style-v3.css?v=20260829" />
+  <style>
+    /* ── 자료실 전용 스타일 ── */
+    .lib-head {
+      background: var(--cream-alt);
+      padding: 64px 24px 52px;
+      text-align: center;
+    }
+    .lib-eyebrow {
+      font-size: 13px;
+      letter-spacing: .14em;
+      font-weight: 700;
+      color: var(--forest-lite);
+      margin-bottom: 14px;
+    }
+    .lib-title {
+      font-size: 38px;
+      line-height: 1.3;
+      color: var(--forest);
+      margin-bottom: 16px;
+    }
+    .lib-sub {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #5B584F;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .lib-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+    .lib-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 22px;
+    }
+
+    .lib-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(11,73,58,0.10);
+      border-radius: 16px;
+      padding: 26px 24px 22px;
+      display: flex;
+      flex-direction: column;
+    }
+    .lib-card-ico {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--mustard-lt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      margin-bottom: 16px;
+    }
+    .lib-card h3 {
+      font-size: 19px;
+      line-height: 1.45;
+      color: var(--forest);
+      margin-bottom: 10px;
+    }
+    .lib-card p {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #5B584F;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .lib-meta {
+      font-size: 12.5px;
+      color: #8A867B;
+      margin-bottom: 16px;
+      word-break: break-all;
+    }
+    .lib-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .lib-btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .lib-btn-primary {
+      background: var(--forest);
+      color: var(--cream);
+    }
+    .lib-btn-primary:hover { background: var(--forest-mid); }
+    .lib-btn-ghost {
+      background: transparent;
+      color: var(--forest);
+      border-color: rgba(11,73,58,0.28);
+    }
+    .lib-btn-ghost:hover { background: rgba(11,73,58,0.06); }
+
+    .lib-empty {
+      text-align: center;
+      padding: 60px 24px;
+      background: var(--card-bg);
+      border: 1px dashed rgba(11,73,58,0.22);
+      border-radius: 16px;
+      color: #5B584F;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .lib-note {
+      margin-top: 40px;
+      padding: 22px 24px;
+      background: rgba(242,182,89,0.14);
+      border-radius: 14px;
+      font-size: 14px;
+      line-height: 1.85;
+      color: #5B584F;
+    }
+    .lib-note strong { color: var(--forest); }
+
+    @media (max-width: 600px) {
+      .lib-head { padding: 44px 20px 36px; }
+      .lib-title { font-size: 28px; }
+      .lib-wrap { padding: 36px 20px 60px; }
+      .lib-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="site-header">
+    <a href="index.html" class="header-logo"><img src="images/logo.png" alt="다이어트 영수증" /></a>
+
+    <nav>
+      <ul class="header-nav">
+        <li><a href="index.html#about">브랜드 소개</a></li>
+        <li><a href="catalog.html">제품 목록</a></li>
+        <li><a href="library.html">자료실</a></li>
+        <li><a href="index.html#contact">채널 소식</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="https://www.youtube.com/@다이어트영수증" target="_blank">유튜브 채널</a>
+      <a href="catalog.html" class="cart-icon">제품 보기 &nbsp;<span style="font-size:15px;">→</span></a>
+    </div>
+  </header>
+
+  <!-- ── 자료실 헤더 ── -->
+  <div class="lib-head">
+    <p class="lib-eyebrow">FREE DOWNLOAD</p>
+    <h1 class="lib-title">자료실</h1>
+    <p class="lib-sub">
+      영상에서 말씀드린 기록지와 가이드를 여기에 모아둡니다.<br>
+      휴대폰에서도 바로 열리고, 저장해서 프린트하셔도 괜찮아요.
+    </p>
+  </div>
+
+  <!-- ── 자료 목록 ── -->
+  <div class="lib-wrap">
+    <div class="lib-grid" id="lib-grid"></div>
+
+    <div class="lib-note">
+      <strong>자료 이용 안내</strong><br>
+      개인적으로 쓰시는 건 얼마든지 괜찮아요. 다만 파일을 다시 올려 배포하거나 판매하는 건 삼가주세요.
+      필요한 분이 있으면 이 페이지 링크를 나눠주시면 감사하겠습니다.
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-nav">
+        <h4>둘러보기</h4>
+        <ul>
+          <li><a href="index.html">홈</a></li>
+          <li><a href="index.html#about">브랜드 소개</a></li>
+          <li><a href="catalog.html">제품 목록</a></li>
+          <li><a href="library.html">자료실</a></li>
+        </ul>
+      </div>
+      <div class="footer-center">
+        <a href="index.html" class="footer-logo"><img src="images/logo.png" alt="다이어트 영수증" /></a>
+        <ul class="footer-socials">
+          <li><a href="https://www.youtube.com/@다이어트영수증" target="_blank" rel="noopener noreferrer">유튜브</a></li>
+          <li><a href="https://www.youtube.com/@다이어트영수증" target="_blank" rel="noopener noreferrer">인스타</a></li>
+          <li><a href="https://blog.naver.com/godgan17" target="_blank" rel="noopener noreferrer">블로그</a></li>
+        </ul>
+      </div>
+      <div class="footer-right"></div>
+    </div>
+    <p class="footer-partners-notice">이 포스팅은 쿠팡 파트너스 활동의 일환으로 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    <div class="footer-bottom">
+      <p>© 2026 다이어트 영수증 by 살림이. All rights reserved.</p>
+      <ul class="footer-legal">
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">이용약관</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+  /* ══════════════════════════════════════════════════════════
+     여기만 고치시면 됩니다.
+
+     1) PDF 파일을 files 폴더에 올린다
+     2) 아래 목록에 { } 한 덩어리를 복사해서 붙여넣고
+        file / title / desc 세 줄만 바꾼다
+     3) 저장하면 끝
+
+     file  : files 폴더에 올린 파일 이름 (띄어쓰기 없이, 영문 권장)
+     title : 자료실에 보일 제목
+     desc  : 한두 줄 설명
+     icon  : 앞에 보일 이모지 (안 쓰면 지워도 됩니다)
+  ══════════════════════════════════════════════════════════ */
+  var LIBRARY_FILES = [
+    // {
+    //   file:  "diet-receipt-record.pdf",
+    //   title: "하루 식사 기록지",
+    //   desc:  "먹은 것, 잔 시간, 컨디션을 한 장에 적는 기록지예요. 프린트해서 쓰시면 편합니다.",
+    //   icon:  "📄"
+    // },
+  ];
+  /* ══════════════════════════════════════════════════════════ */
+
+  (function () {
+    var grid = document.getElementById('lib-grid');
+
+    if (!LIBRARY_FILES.length) {
+      grid.outerHTML =
+        '<div class="lib-empty">아직 올라간 자료가 없어요.<br>' +
+        '첫 자료가 준비되면 이 자리에 올려둘게요.</div>';
+      return;
+    }
+
+    LIBRARY_FILES.forEach(function (item) {
+      var url = 'files/' + item.file;
+
+      var card = document.createElement('div');
+      card.className = 'lib-card';
+
+      var ico = document.createElement('div');
+      ico.className = 'lib-card-ico';
+      ico.textContent = item.icon || '📄';
+      card.appendChild(ico);
+
+      var h3 = document.createElement('h3');
+      h3.textContent = item.title;
+      card.appendChild(h3);
+
+      var p = document.createElement('p');
+      p.textContent = item.desc || '';
+      card.appendChild(p);
+
+      var meta = document.createElement('p');
+      meta.className = 'lib-meta';
+      meta.textContent = 'PDF · ' + item.file;
+      card.appendChild(meta);
+
+      var btns = document.createElement('div');
+      btns.className = 'lib-btns';
+
+      var open = document.createElement('a');
+      open.className = 'lib-btn lib-btn-primary';
+      open.href = url;
+      open.target = '_blank';
+      open.rel = 'noopener noreferrer';
+      open.textContent = '열어보기';
+      btns.appendChild(open);
+
+      var save = document.createElement('a');
+      save.className = 'lib-btn lib-btn-ghost';
+      save.href = url;
+      save.setAttribute('download', '');
+      save.textContent = '저장하기';
+      btns.appendChild(save);
+
+      var copy = document.createElement('button');
+      copy.type = 'button';
+      copy.className = 'lib-btn lib-btn-ghost';
+      copy.textContent = '링크 복사';
+      copy.addEventListener('click', function () {
+        var full = new URL(url, window.location.href).href;
+        var done = function () {
+          var old = copy.textContent;
+          copy.textContent = '복사됐어요';
+          setTimeout(function () { copy.textContent = old; }, 1600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(full).then(done, function () { window.prompt('아래 링크를 복사해 주세요', full); });
+        } else {
+          window.prompt('아래 링크를 복사해 주세요', full);
+        }
+      });
+      btns.appendChild(copy);
+
+      card.appendChild(btns);
+      grid.appendChild(card);
+    });
+  })();
+  </script>
+
+  <script src="announce.js"></script>
+</body>
+</html>
