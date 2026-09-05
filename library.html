@@ -41,7 +41,7 @@
     }
     .lib-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
       gap: 22px;
     }
 
@@ -230,12 +230,34 @@
      icon  : 앞에 보일 이모지 (안 쓰면 지워도 됩니다)
   ══════════════════════════════════════════════════════════ */
   var LIBRARY_FILES = [
-    // {
-    //   file:  "diet-receipt-record.pdf",
-    //   title: "하루 식사 기록지",
-    //   desc:  "먹은 것, 잔 시간, 컨디션을 한 장에 적는 기록지예요. 프린트해서 쓰시면 편합니다.",
-    //   icon:  "📄"
-    // },
+    {
+      file:  "biocom-metabolic-report.pdf",
+      title: "종합 대사기능 분석 리포트 (샘플)",
+      desc:  "유기산 64종으로 대사 기능을 보는 검사예요. 체중조절능력, 정신 건강, 장 건강, 독소 스트레스, 항산화 능력까지 항목별로 나옵니다.",
+      meta:  "78쪽 · 12.3MB",
+      icon:  "\u{1F9EA}"
+    },
+    {
+      file:  "biocom-metabolic-solution.pdf",
+      title: "내 몸이 원하는 맞춤 솔루션 (샘플)",
+      desc:  "위 대사기능 분석 결과를 바탕으로 나온 실행 편이에요. 맞춤 영양소, 생활 습관, 식단이 정리돼 있습니다.",
+      meta:  "36쪽 · 15.6MB",
+      icon:  "\u{1F957}"
+    },
+    {
+      file:  "biocom-hormone-report.pdf",
+      title: "종합 호르몬 균형 분석 리포트 (샘플)",
+      desc:  "호르몬 나이, 스트레스 관리 능력, 기상 피로도 같은 지표를 실제 나이와 비교해서 보여주는 검사입니다.",
+      meta:  "20쪽 · 5.6MB",
+      icon:  "\u{1F9EC}"
+    },
+    {
+      file:  "biocom-hormone-guide.pdf",
+      title: "호르몬 밸런스 가이드 (샘플)",
+      desc:  "호르몬 균형을 위해 생활습관, 식이, 영양을 어떻게 조정하면 좋은지 정리한 가이드예요. 갱년기 지나면서 읽어볼 만합니다.",
+      meta:  "21쪽 · 3.4MB",
+      icon:  "\u{1F331}"
+    }
   ];
   /* ══════════════════════════════════════════════════════════ */
 
@@ -270,7 +292,7 @@
 
       var meta = document.createElement('p');
       meta.className = 'lib-meta';
-      meta.textContent = 'PDF · ' + item.file;
+      meta.textContent = item.meta ? ('PDF · ' + item.meta) : ('PDF · ' + item.file);
       card.appendChild(meta);
 
       var btns = document.createElement('div');
