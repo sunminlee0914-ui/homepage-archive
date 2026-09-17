@@ -1308,15 +1308,37 @@ img { display: block; max-width: 100%; }
 }
 
 /* ── RESPONSIVE ───────────────────────────────────── */
+
+/* 중간 폭(노트북·가로 태블릿): 히어로 텍스트·CTA가 우측 이미지와 겹치지 않도록 */
+@media (min-width: 901px) and (max-width: 1180px) {
+  .hero-image-block { width: 45%; }
+  .hero-content { padding: 0 56px; max-width: 55%; }
+  .hero-cta { gap: 10px; max-width: calc(55vw - 112px); }
+  .hero .btn {
+    padding: 15px 22px;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    gap: 8px;
+  }
+}
+
 @media (max-width: 900px) {
   .site-header { padding: 0 24px; }
   .header-nav { gap: 20px; }
-  .hero-content { padding: 0 40px; max-width: 100%; }
+  /* 텍스트·버튼이 우측 이미지 영역을 침범하지 않도록 크림 영역 안으로 제한 */
+  .hero-content { padding: 0 40px; max-width: 54%; }
   .hero-image-block { width: 45%; }
   .hero-title { font-size: clamp(34px, 4.5vw, 60px); }
   .hero-desc { font-size: 16px; max-width: 380px; }
   .hero-hand { font-size: 19px; max-width: 380px; }
   .hero-notice { font-size: 13px; max-width: 290px; }
+  .hero-cta { gap: 10px; }
+  .hero .btn {
+    padding: 15px 22px;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    gap: 8px;
+  }
   .section { padding: 48px 24px; }
   .products-grid, .catalog-grid { grid-template-columns: repeat(2, 1fr); }
   .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
